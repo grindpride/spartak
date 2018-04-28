@@ -1,0 +1,63 @@
+@import  './field.pcss';
+
+.wrapper{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.sidebar{
+	position: absolute;
+	left: 0;
+	top: 0;
+	&__menu{
+
+	}
+}
+
+.player-profile{
+	display: none;
+	position: absolute;
+	width: 700px;
+	height: 800px;
+	border: 1px solid black;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: white;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	&.visible{
+		display: flex;
+	}
+	&__close{
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-size: 100px;
+		cursor: pointer;
+	}
+	&__name{
+		flex: 1 0 100%;
+		text-align: center;
+	}
+	&__photo{
+		display: block;
+		width: 300px;
+		height: 300px;
+		background: url('../assets/img/no_ava.png') center no-repeat;
+		background-size: cover;
+	}
+	&__tabs{
+		flex: 1 0 100%;
+		display: flex;
+	}
+}
+.tab{
+	border: 1px solid black;
+	padding: 5px 10px;
+	margin: 5px;
+	cursor: pointer;
+	&:active, &.active{
+		background: red;
+	}
+}

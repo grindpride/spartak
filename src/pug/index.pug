@@ -1,0 +1,95 @@
+html
+	head
+	title Spartak
+	link(rel='stylesheet', href='../css/style.pcss')
+	script(src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
+  	
+body
+	.wrapper
+		aside.sidebar
+			h1.sidebar__header Бей беги
+			.sidebar__burger#burger
+			ul.sidebar__menu.menu
+				li.menu__item Заголовок1
+				li.menu__item Заголовок2
+				li.menu__item Заголовок3
+				li.menu__item Заголовок4
+				li.menu__item Заголовок5
+				li.menu__item Заголовок6		
+				
+		.field
+			.field__player.player.field__player--1.player
+				include ../assets/img/player.svg
+				.player__hover
+					.player__name Имя Фамилия
+					span.player__role Вратарь	
+			.field__player.field__player--2.player
+				include  ../assets/img/player.svg 
+				.player__hover
+					.player__name Имя Фамилия
+					span.player__role Защитник	
+			.field__player.field__player--3.player
+				include ../assets/img/player.svg
+				.player__hover
+					.player__name Имя Фамилия
+					span.player__role Защитник	 
+			.field__player.field__player--4.player
+				include ../assets/img/player.svg
+				.player__hover
+					.player__name Имя Фамилия
+					span.player__role Защитник	 
+			.field__player.field__player--5.player
+				include ../assets/img/player.svg
+				.player__hover
+					.player__name Имя Фамилия
+					span.player__role Нападающий	 
+			.field__player.field__player--6.player
+				include ../assets/img/player.svg
+				.player__hover
+					.player__name Имя Фамилия
+					span.player__role Нападающий	 
+			.field__player.field__player--7.player
+				include ../assets/img/player.svg
+				.player__hover
+					.player__name Имя Фамилия
+					span.player__role Нападающий	 
+			.field__player.field__player--8.player
+				include ../assets/img/player.svg
+				.player__hover
+					.player__name Имя Фамилия
+					span.player__role Нападающий	 
+			.field__player.field__player--9.player
+				include ../assets/img/player.svg
+				.player__hover
+					.player__name Имя Фамилия
+					span.player__role Нападающий	 
+			.field__player.field__player--10.player
+				include ../assets/img/player.svg
+				.player__hover
+					.player__name Имя Фамилия
+					span.player__role Нападающий	 
+			.field__player.field__player--11.player
+				include ../assets/img/player.svg 
+				.player__hover
+					.player__name Имя Фамилия
+					span.player__role Нападающий
+		.player-profile
+			.player-profile__close &times;
+			h2.player-profile__name Имя Фамилия
+			.player-profile__photo
+			.player-profile__about
+				.player-profile__life-span!= '1898 - 1937'
+				.player-profile__post Тренер по легкой атлетике сообщества "Спартак"
+				ul.player-profile__meta
+					li.meta__item Выезжал за границу
+					li.meta__item Дружил с семьей Старостиных
+			.player-profile__tabs
+				.tab Биография
+				.tab Арест
+				.tab Ахивно-следственное дело
+				.tab Связь с делом Спартака
+								
+
+	
+
+	script(src='../js/index.js')

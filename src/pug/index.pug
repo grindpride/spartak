@@ -2,81 +2,93 @@ html
 	head
 	title Spartak
 	link(rel='stylesheet', href='../css/style.pcss')
+	link(href="https://fonts.googleapis.com/css?family=Rubik:300,500,700,900&amp;subset=cyrillic" rel="stylesheet")
+
 	script(src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
   	
 body
 	.wrapper
 		aside.sidebar
-			h1.sidebar__header Бей беги
+			.sidebar__logo
+				h1.sidebar__title Дело
+					br
+					| спартака
+				p.sidebar__descr Люди гибнут за футбол
+
 			.burger#burger
 				.burger__shift
 				.burger__shift
 				.burger__shift
+
 			ul.sidebar__menu.menu
-				li.menu__item Заголовок1
-				li.menu__item Заголовок2
-				li.menu__item Заголовок3
-				li.menu__item Заголовок4
-				li.menu__item Заголовок5
-				li.menu__item Заголовок6		
+				li.menu__item Начать игру
+				li.menu__item Завершить игру
+				li.menu__item Интро
+				li.menu__item Обзор матча
+			
+			div.social.cross-corners
+				a(href="#").social__item.fb
+				a(href="#").social__item.ok
+				a(href="#").social__item.tw
+				a(href="#").social__item.vk
 				
 		.field
 			.field__player.player.field__player--1.player
-				include ../assets/img/player.svg
+				//- include ../assets/img/player.svg
 				.player__hover
 					.player__name Имя Фамилия
 					span.player__role Вратарь	
 			.field__player.field__player--2.player
-				include  ../assets/img/player.svg 
+				//- include  ../assets/img/player.svg 
 				.player__hover
 					.player__name Имя Фамилия
 					span.player__role Защитник	
 			.field__player.field__player--3.player
-				include ../assets/img/player.svg
+				//- include ../assets/img/player.svg
 				.player__hover
 					.player__name Имя Фамилия
 					span.player__role Защитник	 
 			.field__player.field__player--4.player
-				include ../assets/img/player.svg
+				//- include ../assets/img/player.svg
 				.player__hover
 					.player__name Имя Фамилия
 					span.player__role Защитник	 
 			.field__player.field__player--5.player
-				include ../assets/img/player.svg
+				//- include ../assets/img/player.svg
 				.player__hover
 					.player__name Имя Фамилия
 					span.player__role Нападающий	 
 			.field__player.field__player--6.player
-				include ../assets/img/player.svg
+				//- include ../assets/img/player.svg
 				.player__hover
 					.player__name Имя Фамилия
 					span.player__role Нападающий	 
 			.field__player.field__player--7.player
-				include ../assets/img/player.svg
+				//- include ../assets/img/player.svg
 				.player__hover
 					.player__name Имя Фамилия
 					span.player__role Нападающий	 
 			.field__player.field__player--8.player
-				include ../assets/img/player.svg
+				//- include ../assets/img/player.svg
 				.player__hover
 					.player__name Имя Фамилия
 					span.player__role Нападающий	 
 			.field__player.field__player--9.player
-				include ../assets/img/player.svg
+				//- include ../assets/img/player.svg
 				.player__hover
 					.player__name Имя Фамилия
 					span.player__role Нападающий	 
 			.field__player.field__player--10.player
-				include ../assets/img/player.svg
+				//- include ../assets/img/player.svg
 				.player__hover
 					.player__name Имя Фамилия
 					span.player__role Нападающий	 
 			.field__player.field__player--11.player
-				include ../assets/img/player.svg 
+				//- include ../assets/img/player.svg 
 				.player__hover
 					.player__name Имя Фамилия
 					span.player__role Нападающий
-		.player-profile
+		.player-profile.cross-corners
 			.player-profile__close &times;
 			h2.player-profile__name Имя Фамилия
 			.player-profile__photo

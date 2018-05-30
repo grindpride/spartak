@@ -5,12 +5,13 @@ $('.player, .player-profile__close').click(function(){
 	$('.player-profile').toggleClass('visible');
 
 });
+
 $('.burger').click(function(){
 	console.log('toggle');
 	$(this).toggleClass('active');
-	$('.menu').toggleClass('active');
-
+	$('.menu').slideToggle(200);
 });
+
 $("ul.tabs__caption").on("click", "li:not(.active)", function() {
   $(this)
     .addClass("active")

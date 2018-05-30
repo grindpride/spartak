@@ -1,95 +1,98 @@
-.field{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	width: 75vh;
-	height: 50vh;
-	background: url('../assets/img/field.jpg') center no-repeat;
-	background-size: cover;
-	&__player{
-		position: absolute;
-		transform: translate(-50%,-50%);
-		top: 0;
-		left: 0;
-		cursor: pointer;
-		transform-origin: center;
-		&:hover{
-			svg{
+.field {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 520px;
+    background: url('../assets/img/field-01.png') center no-repeat;
+    background-size: contain;
+    &__player {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 0;
+        left: 0;
+        width: 70px;
+        height: 110px;
+        cursor: pointer;
+        transform-origin: center;
+        background-color: #F2F1F2;
+        transition: all .3s ease;
+        &:hover {
+			transform: translate(-50%, -50%) scale(1.1) rotate(15deg) ;
+        }
 
-				path{
-					fill: white;
-				}
-			
-		}
-		}
-		svg{
-			height: 40px;
-			width: 30px;
-			path{
-				fill: red;
-			}
-			
-		}
-		&--1{
-			top: 50%;
-			left:10%;
-		}
+        &--1 {
+        	background: url('../assets/img/player-01.png') center no-repeat;
+            top: 50%;
+            left: 10%;
+        }
 
-		&--2{
-			top: 25%;
-			left:30%;
-		}
-		&--3{
-			top: 50%;
-			left:30%;
-		}
-		&--4{
-			top: 75%;
-			left:30%;
-		}
+        &--2 {
+        	background: url('../assets/img/player-02.png') center no-repeat;
+            top: 25%;
+            left: 30%;
+        }
+        &--3 {
+        	background: url('../assets/img/player-03.png') center no-repeat;
+            top: 50%;
+            left: 30%;
+        }
+        &--4 {
+        	background: url('../assets/img/player-04.png') center no-repeat;
+            top: 75%;
+            left: 30%;
+        }
 
-		&--5{
-			top: 20%;
-			left:50%;
-		}
-		&--6{
-			top: 40%;
-			left:50%;
-		}
-		&--7{
-			top: 60%;
-			left:50%;
-		}
-		&--8{
-			top: 80%;
-			left:50%;
-		}
+        &--5 {
+        	background: url('../assets/img/player-05.png') center no-repeat;
+            top: 20%;
+            left: 50%;
+        }
+        &--6 {
+        	background: url('../assets/img/player-06.png') center no-repeat;
+            top: 40%;
+            left: 50%;
+        }
+        &--7 {
+        	background: url('../assets/img/player-07.png') center no-repeat;
+            top: 60%;
+            left: 50%;
+        }
+        &--8 {
+        	background: url('../assets/img/player-08.png') center no-repeat;
+            top: 80%;
+            left: 50%;
+        }
 
-		&--9{
-			top: 25%;
-			left:70%;
-		}
-		&--10{
-			top: 50%;
-			left:70%;
-		}
-		&--11{
-			top: 75%;
-			left:70%;
-		}
-	}
-
+        &--9 {
+        	background: url('../assets/img/player-09.png') center no-repeat;
+            top: 25%;
+            left: 70%;
+        }
+        &--10 {
+        	background: url('../assets/img/player-10.png') center no-repeat;
+            top: 50%;
+            left: 70%;
+        }
+        &--11 {
+        	background: url('../assets/img/player-11.png') center no-repeat;
+            top: 75%;
+            left: 70%;
+        }
+    }
 }
 
-.player{
-	&:hover{
-		.player__hover{
-			display: block;
-		}
-	}
-	&__hover{
-		position: absolute;
-		display: none
-	}
+.player {
+	/* background: url('../assets/img/player-01.png') center no-repeat; */
+    background-size: contain;
+    &:hover {
+        .player__hover {
+            display: block;
+        }
+    }
+    &__hover {
+        position: absolute;
+        display: none
+    }
 }

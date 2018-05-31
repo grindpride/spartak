@@ -6,11 +6,11 @@ $('.player, .player-profile__close').click(function(){
 
 });
 
-$('.burger').click(function(){
-	console.log('toggle');
-	$(this).toggleClass('active');
-	$('.menu').slideToggle(200);
-});
+// $('.burger').click(function(){
+// 	console.log('toggle');
+// 	$(this).toggleClass('active');
+// 	$('.menu').slideToggle(200);
+// });
 
 $("ul.tabs__caption").on("click", "li:not(.active)", function() {
   $(this)

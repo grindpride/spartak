@@ -10,28 +10,45 @@ body
 	.wrapper
 		aside.sidebar
 			.sidebar__logo
-				h1.sidebar__title Дело
-					br
-					| спартака
+				h1.sidebar__title Дело спартака
 				p.sidebar__descr Люди гибнут за футбол
 
-			.burger#burger
-				.burger__shift
-				.burger__shift
-				.burger__shift
+			nav.sidebar__menu.menu
+				.burger#burger
+					.burger__shift
+					.burger__shift
+					.burger__shift
 
-			ul.sidebar__menu.menu
-				li.menu__item Начать игру
-				li.menu__item Завершить игру
-				li.menu__item Интро
-				li.menu__item Обзор матча
-			
-			div.social.cross-corners
-				a(href="#").social__item.fb
-				a(href="#").social__item.ok
-				a(href="#").social__item.tw
-				a(href="#").social__item.vk
+				ul.menu__list
+					li.menu__item Начать игру
+					li.menu__item Завершить игру
+					li.menu__item Интро
+					li.menu__item Обзор матча
 				
+			div.social.cross-corners
+				a(href="https://www.facebook.com/Memorial.International").social__item.fb
+					img.social__img(src='../assets/img/fb.png')
+				a(href="#").social__item.ok
+					img(src='../assets/img/ok.png')
+				a(href="https://twitter.com/memorialmoscow").social__item.tw
+					img(src='../assets/img/tw.png')
+				a(href="https://vk.com/memo4ever").social__item.vk
+					img(src='../assets/img/vk.png')
+
+			div.main-src
+				a.main-src__item(href="#")
+					img(src='../assets/img/memo_logo.png')
+				a.main-src__item(href="#")
+					img(src='../assets/img/heinrich_boell.png')
+
+		aside.sidebar-right
+			.sidebar-right__label Скамейка запасных
+			#bench.cross-corners.sidebar-right__field
+			.sidebar-right__label Вне игры
+			#offside.cross-corners.sidebar-right__field
+
+		aside.timeline
+			//- img.timeline__image(src="../assets/img/time_line.png" alt="timeline")							
 		.field
 			.field__player.player.field__player--1.player
 				//- include ../assets/img/player.svg
@@ -84,6 +101,11 @@ body
 					.player__name Имя Фамилия
 					span.player__role Нападающий	 
 			.field__player.field__player--11.player
+				//- include ../assets/img/player.svg 
+				.player__hover
+					.player__name Имя Фамилия
+					span.player__role Нападающий
+			.field__player.field__player--12.player
 				//- include ../assets/img/player.svg 
 				.player__hover
 					.player__name Имя Фамилия

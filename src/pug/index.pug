@@ -1,139 +1,82 @@
 html
 	head
-	title Spartak
+	title Дело спартака
+	meta(name="viewport" content="width=device-width, initial-scale=1.0") 
+
 	link(rel='stylesheet', href='../css/style.pcss')
+
 	link(href="https://fonts.googleapis.com/css?family=Rubik:300,500,700,900&amp;subset=cyrillic" rel="stylesheet")
 
 	script(src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
-  	
+	//- link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js")
+	
+	link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.3.0/css/perfect-scrollbar.min.css")
+
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.3.0/perfect-scrollbar.min.js")
+
 body
 	.wrapper
-		aside.sidebar
-			.sidebar__logo
-				h1.sidebar__title Дело спартака
-				p.sidebar__descr Люди гибнут за футбол
+		section.section-fixed
+			aside.sidebar
+				.sidebar__logo
+					h1.sidebar__title Дело спартака
+					p.sidebar__descr Люди гибнут за футбол
 
-			nav.sidebar__menu.menu
-				.burger#burger
-					.burger__shift
-					.burger__shift
-					.burger__shift
+				nav.sidebar__menu.menu.panel
+					.burger#burger
+						.burger__shift
+						.burger__shift
+						.burger__shift
 
-				ul.menu__list
-					li.menu__item Начать игру
-					li.menu__item Завершить игру
-					li.menu__item Интро
-					li.menu__item Обзор матча
+					ul.menu__list.panel.hidden
+						li.menu__item Интро
+						li.menu__item Начать игру
+						li.menu__item Завершить игру
+						li.menu__item Обзор матча
+						li.menu__item Игроки
+						li.menu__item О проекте
+				.flex-space
+
+				div.social.cross-corners
+					a(href="").social__item.fb
+						//- img.social__img(src='../assets/img/fb.png')
+					a(href="").social__item.ok
+						//- img(src='../assets/img/ok.png')
+					a(href="").social__item.tw
+						//- img(src='../assets/img/tw.png')
+					a(href="").social__item.vk
+						//- img(src='../assets/img/vk.png')
 				
-			div.social.cross-corners
-				a(href="https://www.facebook.com/Memorial.International").social__item.fb
-					img.social__img(src='../assets/img/fb.png')
-				a(href="#").social__item.ok
-					img(src='../assets/img/ok.png')
-				a(href="https://twitter.com/memorialmoscow").social__item.tw
-					img(src='../assets/img/tw.png')
-				a(href="https://vk.com/memo4ever").social__item.vk
-					img(src='../assets/img/vk.png')
+				div.main-src
 
-			div.main-src
-				a.main-src__item(href="#")
-					img(src='../assets/img/memo_logo.png')
-				a.main-src__item(href="#")
-					img(src='../assets/img/heinrich_boell.png')
+					a.main-src__item(href="https://www.memo.ru/" target="_blank")
+						img(src='../assets/img/memo_logo.png')
+					a.main-src__item(href="https://www.boell.de/en" target="_blank")
+						img(src='../assets/img/heinrich_boell.png')
 
-		aside.sidebar-right
-			.sidebar-right__label Скамейка запасных
-			#bench.cross-corners.sidebar-right__field
-			.sidebar-right__label Вне игры
-			#offside.cross-corners.sidebar-right__field
+			aside.sidebar-right.panel.hidden
+				.flex-space
+				.sidebar-right__label Скамейка запасных
+				#bench.cross-corners.sidebar-right__field
+				.sidebar-right__label Вне игры
+				#offside.cross-corners.sidebar-right__field
+		
+			aside.timeline
+		div#fullpage
+			section.section.section-field.fp-auto-height.fp-section(data-anchor="field")
+				include ./field.pug
+			section.section.element2.section-content(data-anchor="translation")
+				.content.cross-corners
+					.content__header.cross-corners--bottom
+						h3.content__title.header__translation.active Трансляция матча
+						h3.content__title.header__event-line Лента событий	
+					.translation
+					include ./event-line.pug
+				.aside-field
+					include ./field.pug	
 
-		aside.timeline
-			//- img.timeline__image(src="../assets/img/time_line.png" alt="timeline")							
-		.field
-			.field__player.player.field__player--1.player
-				//- include ../assets/img/player.svg
-				.player__hover
-					.player__name Имя Фамилия
-					span.player__role Вратарь	
-			.field__player.field__player--2.player
-				//- include  ../assets/img/player.svg 
-				.player__hover
-					.player__name Имя Фамилия
-					span.player__role Защитник	
-			.field__player.field__player--3.player
-				//- include ../assets/img/player.svg
-				.player__hover
-					.player__name Имя Фамилия
-					span.player__role Защитник	 
-			.field__player.field__player--4.player
-				//- include ../assets/img/player.svg
-				.player__hover
-					.player__name Имя Фамилия
-					span.player__role Защитник	 
-			.field__player.field__player--5.player
-				//- include ../assets/img/player.svg
-				.player__hover
-					.player__name Имя Фамилия
-					span.player__role Нападающий	 
-			.field__player.field__player--6.player
-				//- include ../assets/img/player.svg
-				.player__hover
-					.player__name Имя Фамилия
-					span.player__role Нападающий	 
-			.field__player.field__player--7.player
-				//- include ../assets/img/player.svg
-				.player__hover
-					.player__name Имя Фамилия
-					span.player__role Нападающий	 
-			.field__player.field__player--8.player
-				//- include ../assets/img/player.svg
-				.player__hover
-					.player__name Имя Фамилия
-					span.player__role Нападающий	 
-			.field__player.field__player--9.player
-				//- include ../assets/img/player.svg
-				.player__hover
-					.player__name Имя Фамилия
-					span.player__role Нападающий	 
-			.field__player.field__player--10.player
-				//- include ../assets/img/player.svg
-				.player__hover
-					.player__name Имя Фамилия
-					span.player__role Нападающий	 
-			.field__player.field__player--11.player
-				//- include ../assets/img/player.svg 
-				.player__hover
-					.player__name Имя Фамилия
-					span.player__role Нападающий
-			.field__player.field__player--12.player
-				//- include ../assets/img/player.svg 
-				.player__hover
-					.player__name Имя Фамилия
-					span.player__role Нападающий
-		.player-profile.cross-corners
-			.player-profile__close &times;
-			h2.player-profile__name Имя Фамилия
-			.player-profile__photo
-			.player-profile__about
-				.player-profile__life-span!= '1898 - 1937'
-				.player-profile__post Тренер по легкой атлетике сообщества "Спартак"
-				ul.player-profile__meta
-					li.meta__item Выезжал за границу
-					li.meta__item Дружил с семьей Старостиных
-			.player-profile__tabs.tabs
-				ul.tabs__caption
-					li.tab.active Биография
-					li.tab Арест
-					li.tab Ахивно-следственное дело
-					li.tab Связь с делом Спартака
 
-				.tabs__content.active
-					p Lorem1 ipsum dolor sit amet, consectetur adipisicing elit. Ullam, assumenda.
-				.tabs__content
-					p Lore2 ipsum dolor sit amet, consectetur adipisicing elit. Ullam, assumenda.	
-				.tabs__content
-					p Lo3 ipsum dolor sit amet, consectetur adipisicing elit. Ullam, assumenda.
-				.tabs__content
-					p Lor4 ipsum dolor sit amet, consectetur adipisicing elit. Ullam, assumenda.		
+
 
 	script(src='../js/index.js')

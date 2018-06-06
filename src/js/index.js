@@ -73,19 +73,28 @@ $('#fullpage').fullpage({
 		onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
 	});
 
-const ps = new PerfectScrollbar('#ps', {
+const ps1 = new PerfectScrollbar('#eventLine', {
   wheelSpeed: 2,
   wheelPropagation: false,
   minScrollbarLength: 20
 });
-console.log('work');
+
+const ps2 = new PerfectScrollbar('#translation', {
+  wheelSpeed: 2,
+  wheelPropagation: false,
+  minScrollbarLength: 20
+});
+
+
 let menu = $('.menu__list');
 let panels = $('.panel');
 $('.player, .player-profile__close').click(function(){
+
 	console.log('click')
 	$('.player-profile').toggleClass('visible');
 
 });
+
 $(document).keyup(function(e) {
   if (e.keyCode === 27){
   	console.log(e);
@@ -116,7 +125,20 @@ $("ul.tabs__caption").on("click", "li:not(.active)", function() {
     .addClass("active");
 });
 
-$('.content__title').click(function(){
-	$(this).siblings().removeClass('active');
-	$(this).addClass('active');
+// $('.content__title').click(function(){
+// 	$(this).siblings().removeClass('active');
+// 	$(this).addClass('active');
+// 	$('.content__tab').toggleClass('hidden');
+
+// });
+$('.content').on("click", ".content__title:not(.active)", function() {
+  $(this)
+    .addClass("active")
+    .siblings()
+    .removeClass("active");
+    let hidden = $('.content__tab.hidden');
+    let open = $('.content__tab:not(.hidden)')
+    hidden.removeClass("hidden");
+    open.addClass("hidden");
+    
 });

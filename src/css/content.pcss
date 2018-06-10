@@ -11,6 +11,7 @@
 
 .content {
     width: 70%;
+    //width: 600px;
     @media screen and (max-width: 768px) {
         width: 100%;
     }
@@ -134,7 +135,7 @@
     margin-bottom: 60px;
     position: relative;
     width: 100%;
-    display: flex;
+    //display: flex;
     &::after{
         width: 100%;
         content:"***";
@@ -143,12 +144,20 @@
         bottom: -30px;
         text-align: center;
     }
-
+    .fotorama__wrapper{
+        position: relative;
+      width: calc(100% - 300px);
+    }
+    .fotorama{
+      //width: calc(100% - 300px);
+      //  position: relative;
+    }
     &__content{
       width: 100%;
       position: relative;
     }
     &__date{
+        //display: none;
         flex: 1 0 100px;
       margin: 15px 0;
       font-weight: bold;

@@ -142,4 +142,9 @@ $('.content').on("click", ".content__title:not(.active)", function() {
     
 });
 
+$('.fotorama').on('fotorama:fullscreenexit', function() {
+    $(this).data('fotorama').setOptions({'data-width': "100%"});
+	// console.log("exit");
+});
+
 

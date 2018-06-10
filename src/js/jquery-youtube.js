@@ -1,5 +1,5 @@
 console.log('wtf');
-let debug;
+let debug = false;
 if(window.location.host === 'localhost:1234'){
     debug = true;
 }
@@ -9,9 +9,9 @@ tag.src = 'https://www.youtube.com/player_api';
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var tv,
-    playerDefaults = {autoplay: 0,
+    playerDefaults = {autoplay: 1,
         autohide: 1,
-        modestbranding: 0,
+        modestbranding: 1,
         rel: 0,
         showinfo: 0,
         controls: 0,

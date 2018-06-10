@@ -101,7 +101,7 @@ $('.player, .player-profile__close').click(function(){
 
 $(document).keyup(function(e) {
   if (e.keyCode === 27){
-  	console.log(e);
+  	// console.log(e);
 
   	$('.player-profile.visible').removeClass('visible');
   }
@@ -144,7 +144,6 @@ $('.content').on("click", ".content__title:not(.active)", function() {
 
 $('.fotorama').on('fotorama:fullscreenexit', function() {
     $(this).data('fotorama').setOptions({'data-width': "100%"});
-	// console.log("exit");
 });
 
 

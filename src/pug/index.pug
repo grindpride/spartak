@@ -1,22 +1,37 @@
 html
 	head
 	title Дело спартака
-	meta(name="viewport" content="width=device-width, initial-scale=1.0") 
+	meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+	//-favicon
+	link(rel="apple-touch-icon", sizes="120x120", href="static/apple-touch-icon.png")
+	link(rel="icon", type="image/png", sizes="32x32", href="static/favicon-32x32.png")
+	link(rel="icon", type="image/png", sizes="16x16", href="static/favicon-16x16.png")
+	link(rel="manifest", href="static/site.webmanifest")
+	link(rel="mask-icon", href="static/safari-pinned-tab.svg", color="#5bbad5")
+	link(rel="shortcut icon", href="static/favicon.ico")
+	meta(name="msapplication-TileColor", content="#ffffff")
+	meta(name="msapplication-config", content="/static/browserconfig.xml")
+	meta(name="theme-color", content="#ffffff")
 
 	link(rel='stylesheet', href='../css/style.pcss')
-
 	link(href="https://fonts.googleapis.com/css?family=Rubik:300,500,700,900&amp;subset=cyrillic" rel="stylesheet")
 
 	script(src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
 	//- link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css")
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js")
-	
-	link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.3.0/css/perfect-scrollbar.min.css")
 
+	link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.3.0/css/perfect-scrollbar.min.css")
+	link(href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet")
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.3.0/perfect-scrollbar.min.js")
 
 body
 	.wrapper
+		section.section-intro
+			div.tv
+				div.screen.mute#tv
+
+			a#skipIntro Пропустить интро
 		section.section-fixed
 			aside.sidebar
 				.sidebar__logo
@@ -74,38 +89,91 @@ body
 						h3.content__title.header__translation.active Трансляция матча
 						h3.content__title.header__event-line Лента событий
 
-					.event-line.content__tab.hidden#eventLine
-						include ./event-line.pug
+					.content__tab-wrapper
+						.event-line.content__tab.hidden#psEventLine
+							include ./event-line.pug
 
-					.translation.content__tab#translation
-						.translation__item
-							p Созданный в&nbsp;1935-м году &laquo;Спартак&raquo; был добровольно-спортивным обществом нового типа. Союз комсомола и&nbsp;Промкооперации (профсоюза мелких служащих) впервые в&nbsp;советской истории создал команду хотя и&nbsp;связанную с&nbsp;государством, 
-								i однако прямо ему не&nbsp;подконтрольную. 
-								br
-								br
-								|Сама московская футбольная команда возникла на&nbsp;переулках Красной Пресни, где была собрана группой друзей вокруг братьев Старостиных&nbsp;и, меняя название и&nbsp;формальное подчинение, пережила 20-е и&nbsp;первую половину 30-х годов. 
-								br
-								br
-								|Теперь она называлась &laquo;Спартак&raquo;&nbsp;&mdash; в&nbsp;честь немецких социал-демократов и&nbsp;интернационалистов из&nbsp;группы &laquo;Спартак&raquo; Карла Либкнехта и&nbsp;Розы Люксембург.
+						.translation.content__tab#psTranslation
+							.material#material-1
+								.material__content
+									p Созданный в&nbsp;1935-м году &laquo;Спартак&raquo; был добровольно-спортивным обществом нового типа. Союз комсомола и&nbsp;Промкооперации (профсоюза мелких служащих) впервые в&nbsp;советской истории создал команду хотя и&nbsp;связанную с&nbsp;государством,
+										i однако прямо ему не&nbsp;подконтрольную.
+										br
+										br
+										|Сама московская футбольная команда возникла на&nbsp;переулках Красной Пресни, где была собрана группой друзей вокруг братьев Старостиных&nbsp;и, меняя название и&nbsp;формальное подчинение, пережила 20-е и&nbsp;первую половину 30-х годов.
+										br
+										br
+										|Теперь она называлась &laquo;Спартак&raquo;&nbsp;&mdash; в&nbsp;честь немецких социал-демократов и&nbsp;интернационалистов из&nbsp;группы &laquo;Спартак&raquo; Карла Либкнехта и&nbsp;Розы Люксембург.
 
-						.translation__item
-							h3 3 исторических матча
-							p В первые два года с момента основания историю “Спартака” определили несколько больших матчей.
-							p В январе 1936-го в Париже против “Рэсинга”, лидера местной футбольной лиги сыграла объединенная команда “Спартака” и “Динамо”. Поражение 1:2 разочаровало, однако и уровень игры, и политическое звучание этой поездки (работа над созданием антифашистского блока в Европе) были признаны успешными. Спортсменам и политикам в СССР стало ясно, что никакой пропасти между “профессиональным” западным и “любительским” советским футболом не существует. В скором будущем именно этот матч повлиял на решение о создании в СССР собственного национального футбольного чемпионата.
-							p Второе событие - выставочная игра на Красной Площади летом 1936-го года. Проект, предложенный главой Комсомола Александром Косаревым, получил политическую поддержку и впервые в советской истории изменил обычное стройное течение спортивного парада. Посреди Красной площади было разложено гигантское войлочное поле, на котором между собой выставочный матч сыграли основной и дублирующий составы “Спартака”.
-							iframe(src="https://www.youtube.com/embed/gErnc7Ve9VA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+							.material#material-2
+								.material__content
+									h3 3 исторических матча
 
-							p Третья игра стала одной из центральных в клубной спартаковской мифологии. В июле 1937-го года в Москве была обыграна сборная Басконии (6:2), к тому моменту не проигравшая в Советском Союзе ни одного из более чем десятка матчей. Со временем забылись и политические интриги вокруг игры, и дополнительные игроки, приглашенные в “Спартак” из других команд, чтобы усилить состав. “Спартак” победил, решившись играть против испанских республиканцев по новой для себя, “буржуазной” тактической схеме “дубль-вэ”, доказав, что с внешним миром можно не только воевать, но и учиться у него.
+									div.fotorama(data-allowfullscreen="true" data-fit="cover" data-width="100%" data-ratio="800/600")
+										img(src='../assets/img/mat2/img1.png' data-caption="Момент из матча в Париже, 1 января 1936 г. // РГАКФД")
+										img(src='../assets/img/mat2/img2.png' data-caption="Куар против Акимова. Матч в Париже, 1 января 1936 г. // Огонёк, 29.02.36")
+									p В первые два года с момента основания историю “Спартака” определили несколько больших матчей.
+									p В январе 1936-го в Париже против “Рэсинга”, лидера местной футбольной лиги сыграла объединенная команда “Спартака” и “Динамо”. Поражение 1:2 разочаровало, однако и уровень игры, и политическое звучание этой поездки (работа над созданием антифашистского блока в Европе) были признаны успешными. Спортсменам и политикам в СССР стало ясно, что никакой пропасти между “профессиональным” западным и “любительским” советским футболом не существует. В скором будущем именно этот матч повлиял на решение о создании в СССР собственного национального футбольного чемпионата.
+									p Второе событие - выставочная игра на Красной Площади летом 1936-го года. Проект, предложенный главой Комсомола Александром Косаревым, получил политическую поддержку и впервые в советской истории изменил обычное стройное течение спортивного парада. Посреди Красной площади было разложено гигантское войлочное поле, на котором между собой выставочный матч сыграли основной и дублирующий составы “Спартака”.
 
-							iframe(width="560" height="315" src="https://www.youtube.com/embed/J8jFRDZNt7g?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+									div.fotorama(data-allowfullscreen="true" data-fit="cover" data-width="100%" data-ratio="800/600")
+										a(href="https://www.youtube.com/embed/gErnc7Ve9VA")
+									//iframe(src="https://www.youtube.com/embed/gErnc7Ve9VA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
 
-							p Так всего через два с небольшим года после своего основания, общество “Спартак” оказалось самым успешным и популярным в Советском Союзе. Оно могло позволить себе приглашать лучших тренеров (футбольную команду в 1936-м тренировал чешский специалист Антонин Фивебр), лучших атлетов (из других обществ “Спартак” переманил множество звезд), платить своим спортсменам стипендии (за счет средств профсоюзов и Промкооперации). К лету 1937-го года Старостины и “Спартак” были на пике своей славы и успеха. С этого момента и начинается хроника “дела Спартака”.
+									p Третья игра стала одной из центральных в клубной спартаковской мифологии. В июле 1937-го года в Москве была обыграна сборная Басконии (6:2), к тому моменту не проигравшая в Советском Союзе ни одного из более чем десятка матчей. Со временем забылись и политические интриги вокруг игры, и дополнительные игроки, приглашенные в “Спартак” из других команд, чтобы усилить состав. “Спартак” победил, решившись играть против испанских республиканцев по новой для себя, “буржуазной” тактической схеме “дубль-вэ”, доказав, что с внешним миром можно не только воевать, но и учиться у него.
+
+									div.fotorama(data-allowfullscreen="true" data-fit="cover" data-width="100%" data-ratio="800/600")
+										a(href="https://www.youtube.com/embed/J8jFRDZNt7g")
+										//iframe(width="560" height="315" src="https://www.youtube.com/embed/J8jFRDZNt7g?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+
+									p Так всего через два с небольшим года после своего основания, общество “Спартак” оказалось самым успешным и популярным в Советском Союзе. Оно могло позволить себе приглашать лучших тренеров (футбольную команду в 1936-м тренировал чешский специалист Антонин Фивебр), лучших атлетов (из других обществ “Спартак” переманил множество звезд), платить своим спортсменам стипендии (за счет средств профсоюзов и Промкооперации). К лету 1937-го года Старостины и “Спартак” были на пике своей славы и успеха. С этого момента и начинается хроника “дела Спартака”.
+							.material#material-3
+								.material__date
+									span 9-11 июля 1937
+								.material__content
+									p После победы над басками Николай Старостин добивается от организаторов физкультурного парада на Красной площади особой привилегии для своего общества - футболисты “Спартака” проедут на специальной платформе “Бутца” с изображением счета игры с испанскими республиканцами - 6:2. Из соображений безопасности в бутсу сажают также двух сотрудников НКВД, переодетых игроками “Спартака”.
+
+							.material#material-4
+								.material__date
+									span 12 июля 1937
+								.material__content
+									p На Красной Площади проходит парад физкультурников, посвященный 20-летию революции.
+									div.fotorama(data-allowfullscreen="true" data-fit="cover" data-width="100%" data-ratio="800/600")
+										a(href="https://www.youtube.com/watch?v=YmIIPujNCVU" data-caption="Команда “Спартак” и два сотрудника НКВД на платформе “Бутца”, 12 июля 1937, физкультурный парад.")
+										img(src='../assets/img/mat4/img1.jpg' data-caption="Команда “Спартак” и два сотрудника НКВД на платформе “Бутца”, 12 июля 1937, физкультурный парад.")
+							.material#material-5
+								.material__date
+									span 26 июля 1937
+								.material__content
+									p “Спартак” в составе большой советской делегации отправляется на Рабочую Олимпиаду в Антверпен. Участие в турнире - еще одна награда за победу в игре с басками и демонстрация политических возможностей Александра Косарева, сумевшего отправить на Запад свою команду, а не чемпиона того года - московское “Динамо”. Футбольной команде предстоит сыграть в кубковом турнире навылет с любительскими сборными Дании, Франции, Каталонии и Норвегии.
+									div.fotorama(data-allowfullscreen="true" data-fit="cover" data-width="100%" data-ratio="800/600")
+										img(src='../assets/img/mat4/img1.jpg' data-caption="Официальный постер Рабочей Олимпиады в Антверпене // Wikimedia")
+							.material#material-6
+								.material__date
+									span 31 июля 1937
+								.material__content
+									p Секретный&nbsp;
+										a(href='http://old.memo.ru/history/document/0447.htm') приказ НКВД №00047
+										| &nbsp;принимается в Политбюро, начинается самая массовая в истории СССР государственная репрессивная операция против собственных граждан. По новым неформальным правилам арестовывают “бывших кулаков”, “уголовников” и “другие антисоветские элементы”. Меньше чем за год массового террора будут расстреляны более чем 725 тысяч человек по всему СССР.
+							.material#material-7
+								.material__date
+									span 1 августа 1937
+								.material__content
+									p “Спартак” выигрывает скоротечный олимпийский турнир, в самом сложном - полуфинальном - матче обыграв команду Каталонии 2:1 и рабочую сборную Норвегии в финале - 2:0.
+									div.fotorama(data-allowfullscreen="true" data-fit="cover" data-width="100%" data-ratio="800/600")
+										a(href="https://www.youtube.com/watch?v=f36nIS_Pqyc" )
+										img(src='../assets/img/mat7/img1.jpg' data-caption="Фотоскан: “Газета “Правда”, 2 августа 1937")
+							.material#material-8
+								.material__date
+									span 21 августа 1937
+								.material__content
+									p Газета “Правда” выходит со статьей о разворовывании имущества в Институте физкультуры. В заметке указаны конкретные суммы в тысячах рублей и упоминается комсомол как один из возможных ответственных за растрату.
+									div.fotorama(data-allowfullscreen="true" data-fit="cover" data-width="100%" data-ratio="800/600")
+										img(src='../assets/img/mat8/img1.png' data-caption="Газета “Правда”, 21 августа 1937")
 
 
 
 
-
-
-
-
-	script(src='../js/index.js')
+script(src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js")
+script(src='../js/jquery-youtube.js')
+script(src='../js/index.js')

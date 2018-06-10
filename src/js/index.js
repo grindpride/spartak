@@ -1,8 +1,9 @@
+console.log('wtf2');
 
 $('#fullpage').fullpage({
 		//Navigation
 		menu: '#menu',
-		lockAnchors: false,
+		lockAnchors: true,
 		anchors:['field', 'translation'],
 		navigation: false,
 		navigationPosition: 'right',
@@ -31,7 +32,7 @@ $('#fullpage').fullpage({
 		offsetSections: false,
 		resetSliders: false,
 		fadingEffect: false,
-		// normalScrollElements: '.element2',
+		normalScrollElements: '.section-intro',
 		scrollOverflow: false,
 		scrollOverflowReset: false,
 		scrollOverflowOptions: null,
@@ -73,14 +74,17 @@ $('#fullpage').fullpage({
 		onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
 	});
 
-const ps1 = new PerfectScrollbar('#eventLine', {
-  wheelSpeed: 2,
+// $.fn.fullpage.setMouseWheelScrolling(false);
+// $.fn.fullpage.setAllowScrolling(false);
+
+const ps1 = new PerfectScrollbar('#psEventLine', {
+  wheelSpeed: 1,
   wheelPropagation: false,
   minScrollbarLength: 20
 });
 
-const ps2 = new PerfectScrollbar('#translation', {
-  wheelSpeed: 2,
+const ps2 = new PerfectScrollbar('#psTranslation', {
+  wheelSpeed: 1,
   wheelPropagation: false,
   minScrollbarLength: 20
 });
@@ -125,12 +129,7 @@ $("ul.tabs__caption").on("click", "li:not(.active)", function() {
     .addClass("active");
 });
 
-// $('.content__title').click(function(){
-// 	$(this).siblings().removeClass('active');
-// 	$(this).addClass('active');
-// 	$('.content__tab').toggleClass('hidden');
 
-// });
 $('.content').on("click", ".content__title:not(.active)", function() {
   $(this)
     .addClass("active")
@@ -142,3 +141,5 @@ $('.content').on("click", ".content__title:not(.active)", function() {
     open.addClass("hidden");
     
 });
+
+

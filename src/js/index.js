@@ -50,7 +50,7 @@ $('#fullpage').fullpage({
 		verticalCentered: true,
 		// sectionsColor : ['#ccc', '#fff'],
 		paddingTop: '87px',
-		paddingBottom: '48px',
+		paddingBottom: '30px',
 		// fixedElements: '#header, .footer',
 		responsiveWidth: 768,
 		responsiveHeight: 0,
@@ -65,7 +65,16 @@ $('#fullpage').fullpage({
 		lazyLoading: true,
 
 		//events
-		onLeave: function(index, nextIndex, direction){},
+		onLeave: function(index, nextIndex, direction){
+			if(nextIndex!=3){
+                $('.aside-field').addClass('hidden');
+
+			}else{
+                $('.aside-field').removeClass('hidden');
+			}
+
+
+		},
 		afterLoad: function(anchorLink, index){},
 		afterRender: function(){},
 		afterResize: function(){},
@@ -110,11 +119,7 @@ $(document).keyup(function(e) {
 $('.burger').click(function(){
 	console.log('toggle');
 	$(this).toggleClass('active');
-	if(menu.hasClass('hidden')){
-		panels.removeClass('hidden')
-	}else{
-		panels.addClass('hidden')
-	}
+	panels.toggleClass('hidden');
 });
 
 $("ul.tabs__caption").on("click", "li:not(.active)", function() {
@@ -142,8 +147,15 @@ $('.content').on("click", ".content__title:not(.active)", function() {
     
 });
 
+
 $('.fotorama').on('fotorama:fullscreenexit', function() {
+	console.log('fotorama:fullscreenexit');
+	console.log($(this).data('fotorama'))
     $(this).data('fotorama').setOptions({'data-width': "100%"});
+    console.log($(this).data('fotorama').options)
 });
 
-
+// $('.fotorama').on('fotorama:ready ', function() {
+//     console.log('fotorama:ready');
+//     $(this).data('fotorama').setOptions({'data-width': "300px"});
+// });

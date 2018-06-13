@@ -32,19 +32,20 @@ body
 				div.screen.mute#tv
 
 			a#skipIntro Пропустить интро
+		.burger#burger
+			.burger__shift
+			.burger__shift
+			.burger__shift
 		section.section-fixed
-			aside.sidebar
+			aside.sidebar.panel.hidden
 				.sidebar__logo
 					h1.sidebar__title Дело спартака
 					p.sidebar__descr Люди гибнут за футбол
 
-				nav.sidebar__menu.menu.panel
-					.burger#burger
-						.burger__shift
-						.burger__shift
-						.burger__shift
+				nav.sidebar__menu.menu
 
-					ul.menu__list.panel.hidden
+
+					ul.menu__list
 						li.menu__item Интро
 						li.menu__item Начать игру
 						li.menu__item Завершить игру
@@ -55,13 +56,13 @@ body
 
 				div.social.cross-corners
 					a(href="").social__item.fb
-						//- img.social__img(src='../assets/img/fb.png')
+						img.social__img(src='../assets/img/fb.png')
 					a(href="").social__item.ok
-						//- img(src='../assets/img/ok.png')
+						img(src='../assets/img/ok.png')
 					a(href="").social__item.tw
-						//- img(src='../assets/img/tw.png')
+						img(src='../assets/img/tw.png')
 					a(href="").social__item.vk
-						//- img(src='../assets/img/vk.png')
+						img(src='../assets/img/vk.png')
 				
 				div.main-src
 
@@ -71,6 +72,8 @@ body
 						img(src='../assets/img/heinrich_boell.png')
 
 			aside.sidebar-right.panel.hidden
+				.aside-field.hidden
+					include ./field.pug
 				.flex-space
 				.sidebar-right__label Скамейка запасных
 				#bench.cross-corners.sidebar-right__field
@@ -79,11 +82,11 @@ body
 		
 			aside.timeline
 		div#fullpage
+			section.section.section-intro-page
 			section.section.section-field.fp-auto-height.fp-section(data-anchor="field")
 				include ./field.pug
 			section.section.element2.section-content(data-anchor="translation")
-				.aside-field
-					include ./field.pug
+
 				.content.cross-corners
 					.content__header.cross-corners--bottom
 						h3.content__title.header__translation.active Трансляция матча
@@ -142,10 +145,10 @@ body
 									span 12 июля 1937
 								.material__content
 									p На Красной Площади проходит парад физкультурников, посвященный 20-летию революции.
-
-									div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/600")
-										a(href="https://www.youtube.com/watch?v=YmIIPujNCVU" data-caption="Команда “Спартак” и два сотрудника НКВД на платформе “Бутца”, 12 июля 1937, физкультурный парад.")
-										a(href='../assets/img/mat4/img1.jpg' data-caption="Команда “Спартак” и два сотрудника НКВД на платформе “Бутца”, 12 июля 1937, физкультурный парад.")
+									.fotorama__wrapper
+										div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/600")
+											a(href="https://www.youtube.com/watch?v=YmIIPujNCVU" data-caption="Команда “Спартак” и два сотрудника НКВД на платформе “Бутца”, 12 июля 1937, физкультурный парад.")
+											a(href='../assets/img/mat4/img1.jpg' data-caption="Команда “Спартак” и два сотрудника НКВД на платформе “Бутца”, 12 июля 1937, физкультурный парад.")
 							.material#material-5
 								.material__date
 									span 26 июля 1937

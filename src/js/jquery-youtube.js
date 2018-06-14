@@ -97,6 +97,7 @@ $(window).on('load resize', function(){
 });
 
 
+
 $('#skipIntro').click(function () {
     skiped = true;
     $('section.section-intro').slideUp(300);

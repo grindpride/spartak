@@ -5,13 +5,14 @@
 
     padding: 0 240px;
     @media screen and (max-width: 768px) {
-        padding: 0 50px;
+        padding: 0 15px;
     }
 }
 
 .content {
-    width: 70%;
-    //width: 600px;
+    //width: 70%;
+    top: 50%;
+    transform: translateY(-50%);
     @media screen and (max-width: 768px) {
         width: 100%;
     }
@@ -51,20 +52,22 @@
         }
     }
     &__tab-wrapper{
-        height: 80vh;
+        height: 85vh;
         position: relative;
         overflow: hidden;
         width: 100%;
     }
     &__tab {
         width: 100%;
-        height: 80vh;
+        height: 85vh;
         position: absolute;
         top: 0;
         left: 0;
         padding: 30px;
         transition: all 0.3s ease;
-
+        @media screen and (max-width: 768px) {
+            padding: 10px;
+        }
     }
 }
 
@@ -145,7 +148,7 @@
       //flex: 1 0 100px;
       margin: 0 auto;
       position: relative;
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1200px) {
         width: 100%;
       }
     }

@@ -1,7 +1,8 @@
 console.log('wtf');
 let debug = false;
+let skiped = false;
 if(window.location.host === 'localhost:1234'){
-    debug = true;
+    // debug = true;
 }
 
 var tag = document.createElement('script');
@@ -28,12 +29,21 @@ var stopPlayTimer;
 $('.hi em:last-of-type').html(vid.length);
 
 window.onYouTubePlayerAPIReady = function(){
-    tv = new YT.Player('tv', {events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange}, playerVars: playerDefaults});
+    if(!skiped) {
+        tv = new YT.Player('tv', {
+            events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange},
+            playerVars: playerDefaults
+        });
+    }
 }
-
+setInterval(function () {
+    // console.log(skiped);
+}, 50)
 function onPlayerReady(){
-    if(!debug) tv.loadVideoById(vid[currVid]);
-    // tv.mute();
+    if(!debug && !skiped){
+        tv.loadVideoById(vid[currVid]);
+        tv.playVideo();
+    }
 }
 
 function onPlayerStateChange(event) {
@@ -76,24 +86,27 @@ function vidRescale(){
     var w = $(window).width()+200,
         h = $(window).height()+200;
 
-    // if (w/h > 16/9){
+
         tv.setSize(w, w/16*9);
         $('.tv .screen').css({'left': '0px'});
-    // } else {
-    //     tv.setSize(h/9*16, h);
-    //     $('.tv .screen').css({'left': -($('.tv .screen').outerWidth()-w)/2});
-    // }
+
 }
 
 $(window).on('load resize', function(){
-    vidRescale();
+    if(tv) vidRescale();
 });
 
 
 $('#skipIntro').click(function () {
+    skiped = true;
     $('section.section-intro').slideUp(300);
-    pauseVideo();
+    if(tv){
+        pauseVideo();
+    }
+
+
 });
+
 if(debug){
     $('#skipIntro').click();
 }

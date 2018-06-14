@@ -8,11 +8,7 @@ body {
     color: white;
     font-family: 'Rubik', sans-serif;
     background-color: #F2F1F2;
-    img{
-        max-height: 100%!important;
-        max-width: 100%!important;
-        transform: none!important;
-    }
+
 }
 
 * {
@@ -160,5 +156,47 @@ section {
     align-items: center;
 }
 .fp-tableCell{
+
+  //height: auto!important;
+}
+.section-intro-page{
   height: auto!important;
+  .fp-tableCell{
+    height: auto!important;
+  }
+}
+.intro-page{
+  &__wrapper{
+    display: flex;
+    margin-left: 230px;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      margin-left: 0;
+    }
+  }
+  &__title{
+    text-transform: uppercase;
+    color: #1D1D1B;
+    font-size: 26px;
+    margin: 60px 0;
+    font-weight: bolder;
+    text-align: center;
+    //flex: 1 0 100%;
+  }
+  &__text{
+    color: #1D1D1B;
+    font-weight: 300;
+    flex: 1 0 50%;
+    margin: 0 60px;
+    @media screen and (max-width: 768px) {
+      margin: 0 30px;
+    }
+  }
+  &__fotorama{
+    width: 30vw;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      margin-top: 60px;
+    }
+  }
 }

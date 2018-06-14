@@ -49,8 +49,8 @@ $('#fullpage').fullpage({
 		controlArrows: true,
 		verticalCentered: true,
 		// sectionsColor : ['#ccc', '#fff'],
-		paddingTop: '87px',
-		paddingBottom: '30px',
+		// paddingTop: '87px',
+		// paddingBottom: '30px',
 		// fixedElements: '#header, .footer',
 		responsiveWidth: 768,
 		responsiveHeight: 0,
@@ -148,12 +148,12 @@ $('.content').on("click", ".content__title:not(.active)", function() {
 });
 
 
-$('.fotorama').on('fotorama:fullscreenexit', function() {
-	console.log('fotorama:fullscreenexit');
-	console.log($(this).data('fotorama'))
-    $(this).data('fotorama').setOptions({'data-width': "100%"});
-    console.log($(this).data('fotorama').options)
-});
+// $('.fotorama').on('fotorama:fullscreenexit', function() {
+// 	console.log('fotorama:fullscreenexit');
+// 	console.log($(this).data('fotorama'))
+//     $(this).data('fotorama').setOptions({'data-width': "100%"});
+//     console.log($(this).data('fotorama').options)
+// });
 
 // $('.fotorama').on('fotorama:ready ', function() {
 //     console.log('fotorama:ready');

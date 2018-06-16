@@ -36,9 +36,7 @@ window.onYouTubePlayerAPIReady = function(){
         });
     }
 }
-setInterval(function () {
-    // console.log(skiped);
-}, 50)
+
 function onPlayerReady(){
     if(!debug && !skiped){
         tv.loadVideoById(vid[currVid]);
@@ -96,7 +94,11 @@ $(window).on('load resize', function(){
     if(tv) vidRescale();
 });
 
-
+$('#playIntro').click(function () {
+    if(tv){
+        tv.playVideo()
+    }
+});
 
 $('#skipIntro').click(function () {
     skiped = true;
@@ -104,8 +106,6 @@ $('#skipIntro').click(function () {
     if(tv){
         pauseVideo();
     }
-
-
 });
 
 if(debug){

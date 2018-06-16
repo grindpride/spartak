@@ -144,17 +144,19 @@
         position: relative;
     }
     &__content{
-       width: calc(100% - 100px);
-      //flex: 1 0 100px;
+       width: calc(100% - 110px);
+      flex: 1 0 100px;
+
       margin: 0 auto;
       position: relative;
       @media screen and (max-width: 1200px) {
-        width: 100%;
+          width: calc(100% - 110px);
       }
     }
     &__date{
         //display: none;
-        flex: 1 0 100px;
+        width: 100px;
+        //flex: 1 0 100px;
       margin: 15px 0;
       font-weight: bold;
         span{

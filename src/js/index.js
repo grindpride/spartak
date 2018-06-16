@@ -98,6 +98,58 @@ const ps2 = new PerfectScrollbar('#psTranslation', {
   minScrollbarLength: 20
 });
 
+let events = $("[data-materialId]");
+
+let curentEvent;
+let eventLine = $('#psEventLine');
+
+eventLine.on('ps-scroll-y', function (e) {
+	let st = this.scrollTop;
+	// console.log(st);
+	events.each((i)=>{
+		let eventTop = $(events[i]).position().top;
+        if(eventTop>0 && eventTop< 333){
+			let id = $(events[i]).data('materialid');
+			let materialTop = $("#material-"+id).position().top;
+            translationLine[0].scrollTop += materialTop;
+			// console.log(materialTop);
+		}
+	})
+});
+
+let materials = $('.material');
+let translationLine = $('#psTranslation');
+
+translationLine.on('ps-scroll-y', function (e) {
+
+    materials.each((i)=>{
+        let materialTop = $(materials[i]).position().top;
+        if(materialTop>0 && materialTop< 333){
+            let id = $(materials[i]).attr('id').replace('material-','');
+            if(!$("[data-materialid = " + id +"]").length) return;
+            let eventTop = $("[data-materialid = " + id +"]").position().top;
+            // console.log(eventTop);
+            eventLine[0].scrollTop += eventTop - 60;
+            $('.field').attr('material-id', id);
+		}
+	})
+})
+
+$('#psEventLine').on('ps-scroll-y', function (e) {
+    let st = this.scrollTop;
+    // console.log(st);
+    events.each((i)=>{
+        let eventTop = $(events[i]).position().top;
+        if(eventTop>0 && eventTop< 333){
+            let id = $(events[i]).data('materialid');
+            let materialTop = $("#material-"+id).position().top;
+            $('#psTranslation')[0].scrollTop += materialTop;
+            // console.log(materialTop);
+        }
+    })
+
+})
+
 
 let menu = $('.menu__list');
 let panels = $('.panel');

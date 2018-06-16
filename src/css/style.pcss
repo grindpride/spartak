@@ -79,15 +79,24 @@ img {
     width: 100%;
     pointer-events: none;
   }
-    #skipIntro{
+    #skipIntro, #playIntro{
       cursor: pointer;
       position: absolute;
       bottom: 16px;
-      right: 16px;
       z-index: 2;
       padding: 25px;
       background: black;
       text-transform: uppercase;
+      user-select: none;
+    }
+    #skipIntro{
+      right: 16px;
+    }
+    #playIntro{
+      @media all and (min-width:768px) {
+        display: none;
+      }
+      left: 16px;
     }
 }
 
@@ -199,4 +208,25 @@ section {
       margin-top: 60px;
     }
   }
+}
+.fotorama{
+  padding: 5%;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M1 0 L0 1 L99 100 L100 99' fill='black' /><path d='M0 99 L99 0 L100 1 L1 100' fill='black' /></svg>");
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size: 100% 100%, auto;
+}
+.fotorama__caption__wrap {
+  background-color: rgba(0, 0, 0, 0.9)!important;
+  color: white;
+  //width: 100%;
+}
+.fotorama__caption, .fotorama__nav:after, .fotorama__nav:before, .fotorama__stage:after, .fotorama__stage:before, .fotorama__wrap--css3 .fotorama__html, .fotorama__wrap--css3 .fotorama__nav, .fotorama__wrap--css3 .fotorama__spinner, .fotorama__wrap--css3 .fotorama__stage, .fotorama__wrap--css3 .fotorama__stage .fotorama__img, .fotorama__wrap--css3 .fotorama__stage__frame {
+  transform: none!important;
+}
+
+.fotorama__dot {
+  width: 10px!important;
+  height: 10px!important;
+  border-radius: 50%!important;
 }

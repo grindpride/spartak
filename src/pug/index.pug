@@ -43,7 +43,7 @@ html
 					ul.tabs__caption
 						li.tab.active Биография
 						li.tab Арест
-						li.tab Ахивно-следственное дело
+						li.tab Архивно-следственное дело
 						li.tab Связь с делом Спартака
 
 					.tabs__content.bio.active
@@ -80,7 +80,7 @@ html
 					ul.tabs__caption
 						li.tab.active Биография
 						li.tab Арест
-						li.tab Ахивно-следственное дело
+						li.tab Архивно-следственное дело
 						li.tab Связь с делом Спартака
 
 					.tabs__content.bio.active
@@ -124,7 +124,7 @@ html
 					ul.tabs__caption
 						li.tab.active Биография
 						li.tab Арест
-						li.tab Ахивно-следственное дело
+						li.tab Архивно-следственное дело
 						li.tab Связь с делом Спартака
 
 					.tabs__content.bio.active
@@ -158,7 +158,7 @@ html
 					ul.tabs__caption
 						li.tab.active Биография
 						li.tab Арест
-						li.tab Ахивно-следственное дело
+						li.tab Архивно-следственное дело
 						li.tab Связь с делом Спартака
 
 					.tabs__content.bio.active
@@ -196,7 +196,7 @@ html
 					ul.tabs__caption
 						li.tab.active Биография
 						li.tab Арест
-						li.tab Ахивно-следственное дело
+						li.tab Архивно-следственное дело
 						li.tab Связь с делом Спартака
 
 					.tabs__content.bio.active
@@ -236,7 +236,7 @@ html
 					ul.tabs__caption
 						li.tab.active Биография
 						li.tab Арест
-						li.tab Ахивно-следственное дело
+						li.tab Архивно-следственное дело
 						li.tab Связь с делом Спартака
 
 					.tabs__content.bio.active
@@ -277,7 +277,7 @@ html
 					ul.tabs__caption
 						li.tab.active Биография
 						li.tab Арест
-						li.tab Ахивно-следственное дело
+						li.tab Архивно-следственное дело
 						li.tab Связь с делом Спартака
 
 					.tabs__content.bio.active
@@ -315,7 +315,7 @@ html
 					ul.tabs__caption
 						li.tab.active Биография
 						li.tab Арест
-						li.tab Ахивно-следственное дело
+						li.tab Архивно-следственное дело
 						li.tab Связь с делом Спартака
 
 					.tabs__content.bio.active
@@ -354,7 +354,7 @@ html
 					ul.tabs__caption
 						li.tab.active Биография
 						li.tab Арест
-						li.tab Ахивно-следственное дело
+						li.tab Архивно-следственное дело
 						li.tab Связь с делом Спартака
 
 					.tabs__content.bio.active
@@ -395,7 +395,7 @@ html
 					ul.tabs__caption
 						li.tab.active Биография
 						li.tab Арест
-						li.tab Ахивно-следственное дело
+						li.tab Архивно-следственное дело
 						li.tab Связь с делом Спартака
 
 					.tabs__content.bio.active
@@ -430,7 +430,7 @@ html
 					ul.tabs__caption
 						li.tab.active Биография
 						li.tab Арест
-						li.tab Ахивно-следственное дело
+						li.tab Архивно-следственное дело
 						li.tab Связь с делом Спартака
 
 					.tabs__content.bio.active
@@ -474,7 +474,7 @@ html
 					ul.tabs__caption
 						li.tab.active Биография
 						li.tab Арест
-						li.tab Ахивно-следственное дело
+						li.tab Архивно-следственное дело
 						li.tab Связь с делом Спартака
 
 					.tabs__content.bio.active
@@ -540,14 +540,34 @@ html
 						a.main-src__item(href="https://www.boell.de/en" target="_blank")
 							img(src='../assets/img/heinrich_boell.png')
 
-				//-aside.sidebar-right.panel.hidden
+				aside.sidebar-right.panel.hidden
 					.aside-field.hidden
 						include ./field.pug
 					.flex-space
-					//.sidebar-right__label Скамейка запасных
-					//#bench.cross-corners.sidebar-right__field
-					//.sidebar-right__label Вне игры
-					//#offside.cross-corners.sidebar-right__field
+
+					#bench.cross-corners.sidebar-right__field.hidden
+						.sidebar-right__label Скамейка запасных
+						.player-ava(data-profile="ryabo")
+						.player-ava(data-profile="greben")
+						.player-ava(data-profile="kadril")
+						.player-ava(data-profile="steb")
+						.player-ava(data-profile="prok")
+						.player-ava(data-profile="strep")
+						.player-ava(data-profile="gvozd")
+						.player-ava(data-profile="puzh")
+						.player-ava(data-profile="geek")
+						.player-ava(data-profile="arhan")
+						.player-ava(data-profile="krivonos")
+						.player-ava(data-profile="starost")
+					#offside.cross-corners.sidebar-right__field.hidden
+						.sidebar-right__label Вне игры
+						.player-ava(data-profile="kadril")
+						.player-ava(data-profile="strep")
+						.player-ava(data-profile="gvozd")
+						.player-ava(data-profile="ryabo")
+						.player-ava(data-profile="prok")
+						.player-ava(data-profile="krivonos")
+						.player-ava(data-profile="steb")
 
 				//-aside.timeline
 			div#fullpage
@@ -569,83 +589,8 @@ html
 								a(href='../assets/img/intro-image.png' data-caption="“Спартак” против команды воинской части командира Иванова на стадионе ЦДКА. 1942 г., РГАКФД")
 
 				section.section.section-field.fp-section(data-anchor="field")
-					//include ./field.pug
-					.field
-						img.field__image(src='../assets/img/field-01.png')
+					include ./field.pug
 
-						.field__player.player.field__player--1.player(data-profile="puzh")
-							//- include ../assets/img/player.svg
-							.player__hover
-								.player__name Григорий Пужный
-								.player__life 1904 - 1941
-								.player__role Легкоатлет, старший тренер общества “Спартак”
-
-						.field__player.field__player--2.player(data-profile="kadril")
-							//- include  ../assets/img/player.svg
-							.player__hover
-								.player__name Трофим Кадрилеев
-								.player__life 1910-1938
-								.player__role Лыжник, альпинист, преподаватель на кафедре Инфизкульта им. Сталина.
-
-						.field__player.field__player--3.player(data-profile="krivonos")
-							.player__hover
-								.player__name Серафим Кривоносов
-								.player__life 1903-1938
-								.player__role Футболист, заведующий спортивным магазином общества “Спартак”
-
-						.field__player.field__player--4.player(data-profile="geek")
-							.player__hover
-								.player__name Леонид Геек
-								.player__life 1903-????
-								.player__role Начальник учебно-спортивного отдела общества “Пищевик”
-
-						.field__player.field__player--5.player(data-profile="starost")
-							.player__hover
-								.player__name Старостины
-								.player__role Основатели команды “Спартак”
-
-						.field__player.field__player--6.player(data-profile="greben")
-							.player__hover
-								.player__name Иван Гребенщиков
-								.player__life 1900-1938
-								.player__role Руководитель кафедры лыж и легкой атлетики Московского института физкультуры
-
-						.field__player.field__player--7.player(data-profile="gvozd")
-							.player__hover
-								.player__name Елиазар Гвоздовер
-								.player__life 1914-1938
-								.player__role Тренер по легкой атлетике спортобщества “Рот Фронт”
-
-						.field__player.field__player--8.player(data-profile="arhan")
-							.player__hover
-								.player__name Евгений Архангельский
-								.player__life 1896-????
-								.player__role Бухгалтер планового отдела общества “Спартак”
-
-						.field__player.field__player--9.player(data-profile="strep")
-							.player__hover
-								.player__name Владимир Стрепихеев
-								.player__life 1904-1938
-								.player__role Футбольный судья
-
-						.field__player.field__player--10.player(data-profile="ryabo")
-							.player__hover
-								.player__name Виктор Рябоконь
-								.player__life 1895-1938
-								.player__role Начальник московского спортобщества “Локомотив”
-
-
-						.field__player.field__player--11.player(data-profile="prok")
-							.player__hover
-								.player__name Виктор Прокофьев
-								.player__life 1889-1938
-								.player__role Руководитель футбольно-хоккейной секции спортивного общества "Буревестник"
-
-						.field__player.field__player--12.player(data-profile="steb")
-							.player__hover
-								.player__name Василий Стеблев
-								.player__life 1906-1938
-								.player__role Начальник легкоатлетической секции и инструктор физкультуры Посольства Германии в СССР
 
 				section.section.element2.section-content(data-anchor="translation")
 
@@ -836,7 +781,7 @@ html
 									.material__date
 										span 31 октября 1937
 									.material__content
-										p О планах по свержению советской власти рассказывает <b>Василий Стеблев</b>. На параде 1 мая 1937 года предполагалось “пробраться в ряды демонстрантов и бросить в мавзолей бомбу, чтобы члены правительства вместе с мавзолеем взлетели на воздух”. Согласно другому плану, рассказанному следствию, по Сталину нужно было стрелять с крыши ГУМа. “Проект” был одобрен заговорщиками, однако на параде так ничего и не случилось. Ведет допрос лейтенант НКВД Михаил <a href="https://nkvd.memo.ru/index.php/Губочкин,_Михаил_Леонтьевич">Леонтьевич Губочкин</a>, он же допрашивал и Виктора Рябоконя.
+										p О планах по свержению советской власти рассказывает <b>Василий Стеблев</b>. На параде 1 мая 1937 года предполагалось “пробраться в ряды демонстрантов и бросить в мавзолей бомбу, чтобы члены правительства вместе с мавзолеем взлетели на воздух”. Согласно другому плану, рассказанному следствию, по Сталину нужно было стрелять с крыши ГУМа. “Проект” был одобрен заговорщиками, однако на параде так ничего и не случилось. Ведет допрос лейтенант НКВД <a href="https://nkvd.memo.ru/index.php/Губочкин,_Михаил_Леонтьевич">Михаил Леонтьевич Губочкин</a>, он же допрашивал и Виктора Рябоконя.
 										blockquote “Выслушав меня, Старостин сказал: “счастливый ты человек, не варишься в собственном соку, а что мы, хотя и ездим заграницу, но что из этого толку, держат там как на цепи. Нет, при советском строе мы по физкультуре далеко не пойдём. Есть ребята с хорошими задатками по всем видам спорта, но советские условия не дадут им хода. <...> Старостина Николая Петровича окружает группа спортсменов, являющаяся по своим взглядам настроенной против партии и советской власти.”.
 										div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/600")
 											a(href='../assets/img/mat21/img1.jpg' data-caption="Первая страница протокола допроса Василия Стеблева, 31 октября 1937 // Следственное дело. “Открытый список” (openlist.wiki)")
@@ -1095,7 +1040,7 @@ html
 									.material__content
 										h3 Дело старостиных
 										div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/600")
-											a(href='https://youtu.be/ONmviAqfTV0' data-caption="Николай Старостин забивает гол в ворота сборной Ленинграда. 1928 (?) г., Спартакиада. РГАКФД")
+											a(href='https://www.youtube.com/watch?v=TN15hNLZD2g&list=PLij4j4U2dbqy89xYCwwekq-VitHYEpneW&index=6' data-caption="Николай Старостин забивает гол в ворота сборной Ленинграда. 1928 (?) г., Спартакиада. РГАКФД")
 										p Через два года после окончания последних дел по арестам 1937-1938 гг., связанных со “Спартаком”, НКВД арестовывает трех братьев Старостиных - Николая, Андрея и Петра. Их обвиняют в финансовых злоупотреблениях, “пораженческих настроениях” (ожидании прихода немецких войск) и затем в “восхвалении буржуазного спорта”. Четвертый брат, Александр, будет арестован чуть позже, осенью.
 										div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/600")
 											a(href='../assets/img/mat55/img1.png' data-caption="Петр Старостин. Фото ареста")

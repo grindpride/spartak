@@ -67,10 +67,10 @@ $('#fullpage').fullpage({
 		//events
 		onLeave: function(index, nextIndex, direction){
 			if(nextIndex!=3){
-                $('.aside-field').addClass('hidden');
+                $('.aside-field, .sidebar-right__field').addClass('hidden');
 
 			}else{
-                $('.aside-field').removeClass('hidden');
+                $('.aside-field, .sidebar-right__field').removeClass('hidden');
 			}
 
 
@@ -104,6 +104,8 @@ let eventLine = $('#psEventLine');
 let materials = $('.material');
 let translationLine = $('#psTranslation');
 
+
+let materialArray = [11, 15 ,16 ,17 ,19 , 20, 25, 28, 29, 30, 31, 32, 33, 34, 36, 37, 38, 49, 52 ,53]
 translationLine.on('ps-scroll-y', function (e) {
 
     materials.each((i)=>{
@@ -116,7 +118,11 @@ translationLine.on('ps-scroll-y', function (e) {
                 let eventTop = $("[data-materialid = " + id +"]").position().top;
                 // console.log('scrolli eveents rom translation', materialTop )
                 eventLine[0].scrollTop += eventTop - 60;
-                $('.field').attr('material-id', id);
+                if(materialArray.indexOf(Number.parseInt(id))> -1){
+                    $('.field').attr('material-id', id);
+                    $('.sidebar-right__field').attr('material-id', id);
+				}
+
                 currentId = id;
 			}else{
             	// console.log('no scroll events')
@@ -139,7 +145,10 @@ $('#psEventLine').on('ps-scroll-y', function (e) {
             if($('#psTranslation').hasClass('hidden')){
                 $('#psTranslation')[0].scrollTop += materialTop;
 
-                // console.log('scrolli translation from events', materialTop )
+                if(materialArray.indexOf(Number.parseInt(id)) > -1){
+                    $('.field').attr('material-id', id);
+                    $('.sidebar-right__field').attr('material-id', id);
+                }
 			}else{
             	// console.log('no scrolli cose hidden')
 			}
@@ -157,13 +166,13 @@ $('.player, .player-profile__close').click(function(){
 	$('.player-profile').removeClass('visible');
 
 });
-$('.player').click(function () {
+$('[data-profile]').click(function () {
 	let profileId= $(this).data('profile');
 	console.log(profileId);
 	if(profileId && $('#'+ profileId).length){
         $('#'+ profileId).addClass('visible');
 	}
-})
+});
 $(document).keyup(function(e) {
   if (e.keyCode === 27){
   	// console.log(e);

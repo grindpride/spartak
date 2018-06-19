@@ -1,4 +1,4 @@
-console.log('wtf2');
+console.log('Main script');
 
 $('#fullpage').fullpage({
 		//Navigation
@@ -99,23 +99,7 @@ const ps2 = new PerfectScrollbar('#psTranslation', {
 });
 
 let events = $("[data-materialId]");
-
-let curentEvent;
 let eventLine = $('#psEventLine');
-
-eventLine.on('ps-scroll-y', function (e) {
-	let st = this.scrollTop;
-	// console.log(st);
-	events.each((i)=>{
-		let eventTop = $(events[i]).position().top;
-        if(eventTop>0 && eventTop< 333){
-			let id = $(events[i]).data('materialid');
-			let materialTop = $("#material-"+id).position().top;
-            translationLine[0].scrollTop += materialTop;
-			// console.log(materialTop);
-		}
-	})
-});
 
 let materials = $('.material');
 let translationLine = $('#psTranslation');
@@ -127,13 +111,22 @@ translationLine.on('ps-scroll-y', function (e) {
         if(materialTop>0 && materialTop< 333){
             let id = $(materials[i]).attr('id').replace('material-','');
             if(!$("[data-materialid = " + id +"]").length) return;
-            let eventTop = $("[data-materialid = " + id +"]").position().top;
-            // console.log(eventTop);
-            eventLine[0].scrollTop += eventTop - 60;
-            $('.field').attr('material-id', id);
+
+            if($('#psEventLine').hasClass('hidden') && currentId != id){
+                let eventTop = $("[data-materialid = " + id +"]").position().top;
+                // console.log('scrolli eveents rom translation', materialTop )
+                eventLine[0].scrollTop += eventTop - 60;
+                $('.field').attr('material-id', id);
+                currentId = id;
+			}else{
+            	// console.log('no scroll events')
+			}
+
 		}
 	})
 })
+
+let currentId;
 
 $('#psEventLine').on('ps-scroll-y', function (e) {
     let st = this.scrollTop;
@@ -143,8 +136,14 @@ $('#psEventLine').on('ps-scroll-y', function (e) {
         if(eventTop>0 && eventTop< 333){
             let id = $(events[i]).data('materialid');
             let materialTop = $("#material-"+id).position().top;
-            $('#psTranslation')[0].scrollTop += materialTop;
-            // console.log(materialTop);
+            if($('#psTranslation').hasClass('hidden')){
+                $('#psTranslation')[0].scrollTop += materialTop;
+
+                // console.log('scrolli translation from events', materialTop )
+			}else{
+            	// console.log('no scrolli cose hidden')
+			}
+
         }
     })
 
@@ -155,15 +154,19 @@ let menu = $('.menu__list');
 let panels = $('.panel');
 $('.player, .player-profile__close').click(function(){
 
-	console.log('click')
-	$('.player-profile').toggleClass('visible');
+	$('.player-profile').removeClass('visible');
 
 });
-
+$('.player').click(function () {
+	let profileId= $(this).data('profile');
+	console.log(profileId);
+	if(profileId && $('#'+ profileId).length){
+        $('#'+ profileId).addClass('visible');
+	}
+})
 $(document).keyup(function(e) {
   if (e.keyCode === 27){
   	// console.log(e);
-
   	$('.player-profile.visible').removeClass('visible');
   }
 });
@@ -198,16 +201,3 @@ $('.content').on("click", ".content__title:not(.active)", function() {
     open.addClass("hidden");
     
 });
-
-
-// $('.fotorama').on('fotorama:fullscreenexit', function() {
-// 	console.log('fotorama:fullscreenexit');
-// 	console.log($(this).data('fotorama'))
-//     $(this).data('fotorama').setOptions({'data-width': "100%"});
-//     console.log($(this).data('fotorama').options)
-// });
-
-// $('.fotorama').on('fotorama:ready ', function() {
-//     console.log('fotorama:ready');
-//     $(this).data('fotorama').setOptions({'data-width': "300px"});
-// });

@@ -1,8 +1,8 @@
-console.log('wtf');
+console.log('intro init');
 let debug = false;
 let skiped = false;
 if(window.location.host === 'localhost:1234'){
-    // debug = true;
+    debug = true;
 }
 
 var tag = document.createElement('script');
@@ -17,7 +17,7 @@ var tv,
         showinfo: 0,
         controls: 0,
         disablekb: 1,
-        enablejsapi: 0,
+        enablejsapi: 1,
         iv_load_policy: 3};
 var vid = [
         {'videoId': 'AzR_QYX1eEM', 'suggestedQuality': 'hd720'}
@@ -26,9 +26,11 @@ var vid = [
     currVid = randomVid;
 var stopPlayAt = 27;
 var stopPlayTimer;
-$('.hi em:last-of-type').html(vid.length);
+
+console.log(currVid);
 
 window.onYouTubePlayerAPIReady = function(){
+    console.log('YouTubePlayerAPIReady');
     if(!skiped) {
         tv = new YT.Player('tv', {
             events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange},
@@ -40,8 +42,31 @@ window.onYouTubePlayerAPIReady = function(){
 function onPlayerReady(){
     if(!debug && !skiped){
         tv.loadVideoById(vid[currVid]);
-        tv.playVideo();
+
+        // tv.playVideo();
     }
+}
+function fakeClick(fn) {
+    var $a = $('<a href="#" id="fakeClick"></a>');
+    $a.bind("click", function(e) {
+        e.preventDefault();
+        fn();
+    });
+
+    $("body").append($a);
+
+    var evt,
+        el = $("#fakeClick").get(0);
+
+    if (document.createEvent) {
+        evt = document.createEvent("MouseEvents");
+        if (evt.initMouseEvent) {
+            evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+            el.dispatchEvent(evt);
+        }
+    }
+
+    $(el).remove();
 }
 
 function onPlayerStateChange(event) {
@@ -96,6 +121,7 @@ $(window).on('load resize', function(){
 
 $('#playIntro').click(function () {
     if(tv){
+        tv.stopVideo()
         tv.playVideo()
     }
 });

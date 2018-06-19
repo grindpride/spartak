@@ -88,6 +88,13 @@ img {
       background: black;
       text-transform: uppercase;
       user-select: none;
+      @media all and (max-width:768px) {
+       top: 16px;
+        bottom: auto;
+        padding: 10px;
+        width:  150px;
+        text-align: center;
+      }
     }
     #skipIntro{
       right: 16px;
@@ -115,7 +122,7 @@ section {
 
 
 .cross-corners {
-    position: relative;
+    //position: relative;
     &::after,
     &::before {
         box-sizing: border-box;
@@ -163,6 +170,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100vw;
 }
 .fp-tableCell{
 
@@ -204,8 +212,9 @@ section {
   &__fotorama{
     width: 30vw;
     @media screen and (max-width: 768px) {
-      width: 100%;
+      //width: calc(100% - 20px);
       margin-top: 60px;
+      width: 100vw;
     }
   }
 }

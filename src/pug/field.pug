@@ -1,12 +1,13 @@
-.field
+//-.field
 	img.field__image(src='../assets/img/field-01.png')
 
-	.field__player.player.field__player--1.player
+	.field__player.player.field__player--1.player(data-profile="puzh")
 		//- include ../assets/img/player.svg
 		.player__hover
 			.player__name Григорий Пужный
-			.player__life 1890 - 1937	
-			.player__role Вратарь	
+			.player__life 1904 - 1941
+			.player__role Легкоатлет, старший тренер общества “Спартак”
+
 	.field__player.field__player--2.player
 		//- include  ../assets/img/player.svg 
 		.player__hover
@@ -63,28 +64,4 @@
 		.player__hover
 			.player__name Имя Фамилия
 			.player__role Нападающий
-//-.player-profile.cross-corners
-	.player-profile__close &times;
-	h2.player-profile__name Имя Фамилия
-	.player-profile__photo
-	.player-profile__about
-		.player-profile__life-span!= '1898 - 1937'
-		.player-profile__post Тренер по легкой атлетике сообщества "Спартак"
-		ul.player-profile__meta
-			li.meta__item Выезжал за границу
-			li.meta__item Дружил с семьей Старостиных
-	.player-profile__tabs.tabs
-		ul.tabs__caption
-			li.tab.active Биография
-			li.tab Арест
-			li.tab Ахивно-следственное дело
-			li.tab Связь с делом Спартака
 
-		.tabs__content.active
-			p Lorem1 ipsum dolor sit amet, consectetur adipisicing elit. Ullam, assumenda.
-		.tabs__content
-			p Lore2 ipsum dolor sit amet, consectetur adipisicing elit. Ullam, assumenda.	
-		.tabs__content
-			p Lo3 ipsum dolor sit amet, consectetur adipisicing elit. Ullam, assumenda.
-		.tabs__content
-			p Lor4 ipsum dolor sit amet, consectetur adipisicing elit. Ullam, assumenda.		

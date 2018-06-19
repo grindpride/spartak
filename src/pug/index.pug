@@ -28,10 +28,478 @@ html
 
 	body
 		.wrapper
+			.player-profile.cross-corners#puzh
+				.player-profile__close &times;
+				h2.player-profile__name Григорий Пужный
+
+				.player-profile__about
+					.player-profile__photo
+						img(src="../assets/img/puzhniy.png")
+					ul.player-profile__info
+						li.info-item.player-profile__life-span!= '1904 - 1941'
+						li.info-item.player-profile__post Легкоатлет, старший тренер общества "Спартак"
+
+				.player-profile__tabs.tabs
+					ul.tabs__caption
+						li.tab.active Биография
+						li.tab Арест
+						li.tab Ахивно-следственное дело
+						li.tab Связь с делом Спартака
+
+					.tabs__content.bio.active
+						p Родился в 1904 году.
+
+						p Легкоатлет, старший тренер общества “Спартак”. Спринтер, член эстафетной команды “Спартака” вместе с братьями Знаменскими. Погиб в первые месяцы войны в 1941-ом году.
+
+					.tabs__content.arest
+						p Арестован 30 января 1938 года.
+					.tabs__content.case
+						div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/300")
+							a(href='../assets/img/puzh/obl.jpeg' data-caption="Обложка следственного дела Леонида Геека, Григория Пужного, Семена Кабакова и Евгения Архангельского. ")
+							a(href='../assets/img/puzh/prev.jpeg' data-caption="Обвинения Леониду Гееку и Григорию Пужному. ")
+
+					.tabs__content.connect
+						p Согласно документам из следственного дела, показания против Пужного дают его напарники по команде — братья Знаменские. Вместе с ним обвиняются Леонид Геек и Евгений Архангельский.
+
+			.player-profile.cross-corners#kadril
+				.player-profile__close &times;
+				h2.player-profile__name Трофим Кадрилеев
+
+				.player-profile__about
+					.player-profile__photo
+						img(src="../assets/img/kadril/kadril.jpg")
+					ul.player-profile__info
+						li.info-item.player-profile__life-span!= '1910 - 1938'
+						li.info-item.player-profile__post Лыжник, альпинист, преподаватель на кафедре Инфизкульта им. Сталина.
+						li.info-item.meta-icon__wrapper
+							.meta-icon.meta-icon--weapon
+								.meta-icon__hover Хранение оружия
+							.meta-icon.meta-icon--sport
+								.meta-icon__hover Физическая подготовка
+				.player-profile__tabs.tabs
+					ul.tabs__caption
+						li.tab.active Биография
+						li.tab Арест
+						li.tab Ахивно-следственное дело
+						li.tab Связь с делом Спартака
+
+					.tabs__content.bio.active
+						p Родился в 1910 году в Яхроме, Московская область.
+
+						p Лыжник, альпинист, преподаватель на кафедре Инфизкульта им. Сталина.
+
+						p Не женат.
+
+						p Расстрелян 21 января 1938-го года на Коммунарке.
+
+					.tabs__content.arest
+						p Арестован 25 октября 1937-г на Гороховской улице 20А, в общежитии Инфизкульта.
+					.tabs__content.case
+						div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/300")
+							a(href='../assets/img/kadril/ank1.jpg' data-caption="Анкета арестованного. С.1. ")
+							a(href='../assets/img/kadril/ank2.jpg' data-caption="Анкета арестованного. С.2.")
+							a(href='../assets/img/kadril/pokaz.jpeg' data-caption="Из показаний от 26 октября 1937 г.")
+							a(href='../assets/img/kadril/zagovor.png' data-caption="О заговоре в “Спартаке” из показаний 26 октября 1937 г.")
+							a(href='../assets/img/kadril/obv1.jpg' data-caption="Обвинительное заключение, С.1.")
+							a(href='../assets/img/kadril/obv2.jpg' data-caption="Обвинительное заключение, С.2.")
+
+					.tabs__content.connect
+						p Согласно документам из сфабрикованного дела, во главе преступной организации стояли: Иван Гребенщиков, Николай Старостин, Виктор Рябоконь, Владимир Стрепихеев. В показаниях Кадрилеева можно найти упоминания “другого крыла” организации, в которое входят Василий Стеблев, Елиазар Гвоздовер, Григорий Пужный.
+
+			.player-profile.cross-corners#krivonos
+				.player-profile__close &times;
+				h2.player-profile__name Серафим Кривоносов
+
+				.player-profile__about
+					.player-profile__photo
+						img(src="../assets/img/krivonos/krivonos.jpg")
+					ul.player-profile__info
+						li.info-item.player-profile__life-span!= '1903 - 1938'
+						li.info-item.player-profile__post Футболист, заведующий спортивным магазином общества “Спартак”
+						li.info-item.meta-icon__wrapper
+							.meta-icon.meta-icon--friend
+								.meta-icon__hover Друг семьи Старостиных
+
+				.player-profile__tabs.tabs
+					ul.tabs__caption
+						li.tab.active Биография
+						li.tab Арест
+						li.tab Ахивно-следственное дело
+						li.tab Связь с делом Спартака
+
+					.tabs__content.bio.active
+						p Родился в 1903 году в Москве.
+						p В 20-е годы — футболист, с середины 30-х — заведующий спортивным магазином общества “Спартак”, близкий друг Андрея Старостина.
+						p Следственное дело хранится в Центральном архиве ФСБ.
+						p Расстрелян 20 июня 1938-го года в Коммунарке.
+
+
+					.tabs__content.arest
+						p Арестован 30 апреля 1938 года на Баррикадной улице 19, квартире 5
+					.tabs__content.case
+						p Следственное дело хранится в Центральном архиве ФСБ.
+					.tabs__content.connect
+						p Согласно документам из следственного дела, Серафим Кривоносов называет Владимира Стрепихеева и Андрея Старостина участниками антисоветского кружка.
+
+			.player-profile.cross-corners#starost
+				.player-profile__close &times;
+				h2.player-profile__name Николай, Александр, Андрей, Петр Старостины
+
+				.player-profile__about
+					.player-profile__photo
+						img(src="../assets/img/starost/starost.jpg")
+					ul.player-profile__info
+						li.info-item.player-profile__life-span!= '1898, 1903, 1906, 1909 '
+						li.info-item.player-profile__post Основатели команды “Спартак”
+						li.info-item.meta-icon__wrapper
+
+
+				.player-profile__tabs.tabs
+					ul.tabs__caption
+						li.tab.active Биография
+						li.tab Арест
+						li.tab Ахивно-следственное дело
+						li.tab Связь с делом Спартака
+
+					.tabs__content.bio.active
+						p Основатели команды “Спартак” и игроки, олицетворяющие эту команду на протяжении десятилетий.
+
+						p Арест Старостиных в 1942-м году является отголоском арестов в обществе “Спартак” 1937-38 гг.
+						p Биография братьев Старостиных хорошо описана в книгах “Футбол сквозь годы” (Николай Старостин), “Большой футбол” и “Встречи на футбольной орбите” (Андрей Старостин).
+
+
+					.tabs__content.arest
+						p Николай, Андрей и Петр арестованы 20 марта 1942 года. Александр — 29 октября 1942 года.
+
+					.tabs__content.case
+						div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/300")
+							a(href='../assets/img/starost/mat1.jpg' data-caption="Из материалов по пересмотру дела.")
+							a(href='../assets/img/starost/mat2.jpg' data-caption="Из материалов по пересмотру дела, ч.2.")
+							a(href='../assets/img/starost/mat3.jpg' data-caption="Из материалов по пересмотру дела, ч.3. ")
+
+					.tabs__content.connect
+						p Дело “Спартака” в 1939 году было началом “дела Старостиных” в 1942 году.
+
+			.player-profile.cross-corners#geek
+				.player-profile__close &times;
+				h2.player-profile__name Леонид Геек
+
+				.player-profile__about
+					.player-profile__photo
+						img(src="../assets/img/geek/geek.png")
+					ul.player-profile__info
+						li.info-item.player-profile__life-span!= '1901 - ????'
+						li.info-item.player-profile__post Начальник учебно-спортивного отдела общества “Пищевик”
+
+
+				.player-profile__tabs.tabs
+					ul.tabs__caption
+						li.tab.active Биография
+						li.tab Арест
+						li.tab Ахивно-следственное дело
+						li.tab Связь с делом Спартака
+
+					.tabs__content.bio.active
+						p Родился в 1901 году в Туле.
+						p Начальник учебно-спортивного отдела общества “Пищевик”.  До того работал бухгалтером в “Спартаке”. Вместе с Николаем Старостиным над финансовыми делами “Спартака”.
+						p Судьба после отмены приговора в 1939-м году неизвестна.
+
+					.tabs__content.arest
+						p Арестован 19 февраля 1938 года на Спириндоновке 9/2 в квартире 18.
+
+					.tabs__content.case
+						div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/300")
+							a(href='../assets/img/geek/otkaz.jpeg' data-caption="Отказ от показаний 9 октября 1939 г. ")
+							a(href='../assets/img/geek/spravka.jpeg' data-caption="Справка на арест, февраль 1938 г.")
+							a(href='../assets/img/geek/peresmotr.png' data-caption="Формулировка обвинения из материалов пересмотра дела. ")
+
+					.tabs__content.connect
+						p Обвинялся по показаниям братьев Знаменских. Проходил по одному делу с Григорием Пужным и Евгением Архангельским.
+
+			.player-profile.cross-corners#greben
+				.player-profile__close &times;
+				h2.player-profile__name Иван Гребенщиков
+
+				.player-profile__about
+					.player-profile__photo
+						img(src="../assets/img/greben/greben.jpg")
+					ul.player-profile__info
+						li.info-item.player-profile__life-span!= '1900 - 1938'
+						li.info-item.player-profile__post Руководитель кафедры лыж и легкой атлетики Московского института физкультуры
+						li.info-item.meta-icon__wrapper
+							.meta-icon.meta-icon--spion
+								.meta-icon__hover Связи с заграницей
+							.meta-icon.meta-icon--sport
+								.meta-icon__hover Физическая подготовка
+
+				.player-profile__tabs.tabs
+					ul.tabs__caption
+						li.tab.active Биография
+						li.tab Арест
+						li.tab Ахивно-следственное дело
+						li.tab Связь с делом Спартака
+
+					.tabs__content.bio.active
+						p Родился в 1900 году в Московской области (Виноградовский район, станция Фаустово).
+						p В 20-30-е гг. — известный лыжник. В 1938 году назначен руководителем кафедры лыж и легкой атлетики Московского института физкультуры.
+						p Не женат.
+						p Расстрелян 21 января 1938-го на Коммунарке. Реабилитирован в мае 1956 года.
+
+
+					.tabs__content.arest
+						p Арестован 20 октября 1937 года в общежитии на Гороховской улице д. 20А.
+						p Осужден 10 мая 1938 года.
+
+					.tabs__content.case
+						div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/300")
+							a(href='../assets/img/greben/pokaz.jpg' data-caption="Признательные показания, 9 декабря 1937 г.")
+							a(href='../assets/img/greben/fragment.png' data-caption="Фрагмент из первого допроса. ")
+
+					.tabs__content.connect
+						p В составе “террористической группы” в числе других называл: Василия Стеблева (якобы привлек его в организацию), Трофима Кадрилеева, Семена Кабакова, Николая Старостина.
+
+			.player-profile.cross-corners#gvozd
+				.player-profile__close &times;
+				h2.player-profile__name Елиазар Гвоздовер
+
+				.player-profile__about
+					.player-profile__photo
+						img(src="../assets/img/gvozd/gvozd.png")
+					ul.player-profile__info
+						li.info-item.player-profile__life-span!= '1914 - 1938'
+						li.info-item.player-profile__post Тренер по легкой атлетике спортобщества “Рот Фронт”
+
+						li.info-item.meta-icon__wrapper
+							.meta-icon.meta-icon--spion
+								.meta-icon__hover Знал иностранные языки
+
+				.player-profile__tabs.tabs
+					ul.tabs__caption
+						li.tab.active Биография
+						li.tab Арест
+						li.tab Ахивно-следственное дело
+						li.tab Связь с делом Спартака
+
+					.tabs__content.bio.active
+						p Родился в 1914 году в Москве. Закончил аспирантуру Института им. Менделеева.
+						p Был двукратным чемпионом страны в беге на 1500 метров, ученик Василия Стеблева.
+						p Расстрелян 8 февраля 1938 года. Похоронен на Коммунарке. Реабилитирован 9 июня 1956.
+
+
+
+					.tabs__content.arest
+						p Арестован 4 ноября 1937 года в доме по адресу Петровско-Разумовская аллея 14, квартира 2.
+
+					.tabs__content.case
+						div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/300")
+							a(href='../assets/img/gvozd/ank1.jpg' data-caption="Анкета арестованного. С.1")
+							a(href='../assets/img/gvozd/ank2.jpg' data-caption="Анкета арестованного. С.2")
+							a(href='../assets/img/gvozd/obv1.jpg' data-caption="Обвинительное заключение. С.1.")
+							a(href='../assets/img/gvozd/obv2.jpg' data-caption="Обвинительное заключение. С. 2.")
+							a(href='../assets/img/gvozd/isp.jpg' data-caption="Справка о приведении приговора в исполнение. ")
+					.tabs__content.connect
+						p По показаниям Трофима Кадрилеева назван в одной террористической группе вместе с другими легкоатлетами: Григорием Пужным и Василием Стеблевым.
+
+			.player-profile.cross-corners#arhan
+				.player-profile__close &times;
+				h2.player-profile__name Евгений Архангельский
+
+				.player-profile__about
+					.player-profile__photo
+						img(src="../assets/img/arhan/arhan.png")
+					ul.player-profile__info
+						li.info-item.player-profile__life-span!= '1896  - ????'
+						li.info-item.player-profile__post Бухгалтер планового отдела общества “Спартак”
+
+				.player-profile__tabs.tabs
+					ul.tabs__caption
+						li.tab.active Биография
+						li.tab Арест
+						li.tab Ахивно-следственное дело
+						li.tab Связь с делом Спартака
+
+					.tabs__content.bio.active
+						p Бывший футболист, бухгалтер планового отдела общества “Спартак”, близкий друг семьи Старостиных.
+						p Женат, детей нет.
+						p Первый раз арестован 9 марта 1938 года. Позднее был вторично арестован в 1942 году вместе с братьями Старостиными.
+						p В показаниях от 28 марта 1938 признается в участии в нелегальных организациях вместе со Старостиными. В показаниях от октября 1939 года отрицает любую связь с контрреволюционными организациями и ничего не говорит о Старостиных.
+						p О судьбе Архангельского после второго ареста ничего не известно.
+
+					.tabs__content.arest
+						p Арестован 9-го марта 1938-го на улице Воровского 8/1 в 49-ой квартире.
+
+					.tabs__content.case
+						div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/300")
+							a(href='../assets/img/arhan/vorosh.png' data-caption="Е. Архангельский и ворошиловские стрелки")
+							a(href='../assets/img/arhan/mat1.jpg' data-caption="Материалы пересмотра дела. С.1.")
+							a(href='../assets/img/arhan/mat2.jpg' data-caption="Материалы пересмотра дела.С.2.")
+							a(href='../assets/img/arhan/mat3.jpg' data-caption="Материалы пересмотра дела. С.3.")
+					.tabs__content.connect
+						p В обвинении идет в одной связке с Леонидом Гееком и Григорием Пужным. Согласно документам из дела главой антисоветской организации Архангельский называет Николая Старостина.
+
+			.player-profile.cross-corners#strep
+				.player-profile__close &times;
+				h2.player-profile__name Владимир Стрепихеев
+
+				.player-profile__about
+					.player-profile__photo
+						img(src="../assets/img/strep/strep.jpg")
+					ul.player-profile__info
+						li.info-item.player-profile__life-span!= '1904  - 1938'
+						li.info-item.player-profile__post Футбольный судья
+						li.info-item.meta-icon__wrapper
+							.meta-icon.meta-icon--friend
+								.meta-icon__hover друг семьи Старостиных, судил матчи с басками
+				.player-profile__tabs.tabs
+					ul.tabs__caption
+						li.tab.active Биография
+						li.tab Арест
+						li.tab Ахивно-следственное дело
+						li.tab Связь с делом Спартака
+
+					.tabs__content.bio.active
+						p Родился в 1904 году в Москве.
+						p Футбольный судья, директор базы "Москультторга”, близкий друг Андрея Старостина. Не был женат, детей нет.
+						p Расстрелян 21 января 1938-го на полигоне в Коммунарке.
+
+
+					.tabs__content.arest
+						p Арестован 27 октября 1937 года в доме на Большой Бронной 24, квартире 37.
+
+
+					.tabs__content.case
+						div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/300")
+							a(href='../assets/img/strep/mat1.jpg' data-caption="Пересмотр дела Стрепихеева и Кадрилеева. С.1.")
+							a(href='../assets/img/strep/mat2.jpg' data-caption="Пересмотр дела Стрепихеева и Кадрилеева. С.2.")
+							a(href='../assets/img/strep/spravka.jpg' data-caption="Справка о расстреле Владимира Стрепихеева. ")
+
+					.tabs__content.connect
+						p Обвиняется по показаниям Василия Стеблева и Трофима Кадрилеева.
+
+			.player-profile.cross-corners#ryabo
+				.player-profile__close &times;
+				h2.player-profile__name Виктор Рябоконь
+
+				.player-profile__about
+					.player-profile__photo
+						img(src="../assets/img/ryabo/ryabo.jpg")
+					ul.player-profile__info
+						li.info-item.player-profile__life-span!= '1895 - 1938'
+						li.info-item.player-profile__post Начальник московского спортобщества “Локомотив”
+						li.info-item.meta-icon__wrapper
+							.meta-icon.meta-icon--friend
+								.meta-icon__hover знакомый братьев Старостиных
+							.meta-icon.meta-icon--spion
+								.meta-icon__hover выезжал за границу, работал судьей
+				.player-profile__tabs.tabs
+					ul.tabs__caption
+						li.tab.active Биография
+						li.tab Арест
+						li.tab Ахивно-следственное дело
+						li.tab Связь с делом Спартака
+
+					.tabs__content.bio.active
+						p Родился в 1895 году в колонии Елендорф Елизаветпольской губернии.
+						p Футбольный судья, начальник московского спортобщества “Локомотив”. Окончил театральные курсы по специальности “режиссер драмы”.
+						p Расстрелян 27 апреля 1938-го на полигоне в Коммунарке. Реабилитирован в сентябре 1957 года.
+
+					.tabs__content.arest
+						p Арестован 21 октября 1937 года в доме 67/69 на улице Новослободская, в 140-ой квартире.
+
+
+					.tabs__content.case
+						p Следственное дело Виктора Рябоконя находится в архиве ФСБ.
+
+					.tabs__content.connect
+						p Называет членами организации следующих современников: Николая Старостина, Станислав Леута, Петра Исакова, Владимира Стрепихеева, Георгия Фепонова.
+
+			.player-profile.cross-corners#prok
+				.player-profile__close &times;
+				h2.player-profile__name Виктор Прокофьев
+
+				.player-profile__about
+					.player-profile__photo
+						img(src="../assets/img/prok/prok.png")
+					ul.player-profile__info
+						li.info-item.player-profile__life-span!= '1889 - 1938'
+						li.info-item.player-profile__post Руководитель футбольно-хоккейной секции спортивного общества "Буревестник"
+						li.info-item.meta-icon__wrapper
+							.meta-icon.meta-icon--friend
+								.meta-icon__hover связь с семьей Старостиных
+				.player-profile__tabs.tabs
+					ul.tabs__caption
+						li.tab.active Биография
+						li.tab Арест
+						li.tab Ахивно-следственное дело
+						li.tab Связь с делом Спартака
+
+					.tabs__content.bio.active
+						p Родился в 1989 году в Москве.
+						p В 20-е годы — футболист “ЗКС”, “Дуката” и “Промкооперации”. С середины 30-х — один руководителей команды “Буревестник”.
+						p Женат, воспитывает дочь.
+						p Осужден и расстрелян 10 мая 1938-го на полигоне в Коммунарке.
+
+					.tabs__content.arest
+						p Арестован 27 октября 1937 года в своей квартире по адресу: Малый Козихинский переулок, дом 3, квартира 4.
+
+
+					.tabs__content.case
+						div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/300")
+							a(href='../assets/img/prok/ank1.jpg' data-caption="Анкета арестованного. С.1.")
+							a(href='../assets/img/prok/ank2.jpg' data-caption="Анкета арестованного. С.2. ")
+							a(href='../assets/img/prok/obv1.jpg' data-caption="Обвинительное заключение. С.1.")
+							a(href='../assets/img/prok/obv2.jpg' data-caption="Обвинительное заключение. С.2. ")
+							a(href='../assets/img/prok/prigovor.jpg' data-caption="Постановление о приведении приговора в исполнение. ")
+					.tabs__content.connect
+						p В следственном деле можно найти показания на на Прокофьева, якобы данные Василием Стеблевым и Леонидом Гееком. Прокофьева обвиняли в подготовке покушения на Сталина во время парада 1-го мая 1937 года вместе с Николаем Старостиным.
+
+			.player-profile.cross-corners#steb
+				.player-profile__close &times;
+				h2.player-profile__name Василий Стеблев
+
+				.player-profile__about
+					.player-profile__photo
+						img(src="../assets/img/steb/steb.jpg")
+					ul.player-profile__info
+						li.info-item.player-profile__life-span!= '1906 - 1938'
+						li.info-item.player-profile__post Начальник легкоатлетической секции и инструктор физкультуры Посольства Германии в СССР
+						li.info-item.meta-icon__wrapper
+							.meta-icon.meta-icon--spion
+								.meta-icon__hover связь с заграницей (подрабатывал в немецком посольстве)
+							.meta-icon.meta-icon--friend
+								.meta-icon__hover тренировал бегунов общества “Спартак”
+							.meta-icon.meta-icon--sport
+								.meta-icon__hover участвовал в спортивных парадах на Красной площади
+				.player-profile__tabs.tabs
+					ul.tabs__caption
+						li.tab.active Биография
+						li.tab Арест
+						li.tab Ахивно-следственное дело
+						li.tab Связь с делом Спартака
+
+					.tabs__content.bio.active
+						p Родился в 1906 году в Москве.
+						p Тренер легкоатлетической секции общества “Спартак”. Готовил к соревнованиям братьев Знаменских и Елиазара Гвоздовера, по совместительству работал спортивным инструктором в посольстве Германии.
+						p Женат, детей нет.
+						p Осужден и расстрелян 1 сентября 1938 года на полигоне в Коммунарке. Реабилитирован 9 июня 1956 года.
+
+					.tabs__content.arest
+						p Арестован 25 октября 1937 года в Пименовском тупике, 5, квартира 1.
+
+
+					.tabs__content.case
+						div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/300")
+							a(href='../assets/img/steb/mat1.jpeg' data-caption="Из показаний от 31 октября 1937 г.")
+							a(href='../assets/img/steb/obv1.jpg' data-caption="Обвинительное заключение. С.1.")
+							a(href='../assets/img/steb/obv2.jpg' data-caption="Обвинительное заключение. С.2. ")
+							a(href='../assets/img/steb/prigovor.jpg' data-caption="Справка о приведении приговора в исполнение.")
+					.tabs__content.connect
+						p В своих показаниях Стеблев указывает следующих “соучастников”: В. Прокофьева, В. Рябоконя, В. Стрепихеева, И. Гребенщикова, Т. Кадрилеева, П. Людскова, а также главу “организации” — Николая Старостина.
+
 			section.section-intro
 				div.tv
 					div.screen.mute#tv
-				a#playIntro Смотреть
+				a#playIntro Смотреть интро
 				a#skipIntro Пропустить интро
 			//-.burger#burger
 				.burger__shift
@@ -101,7 +569,84 @@ html
 								a(href='../assets/img/intro-image.png' data-caption="“Спартак” против команды воинской части командира Иванова на стадионе ЦДКА. 1942 г., РГАКФД")
 
 				section.section.section-field.fp-section(data-anchor="field")
-					include ./field.pug
+					//include ./field.pug
+					.field
+						img.field__image(src='../assets/img/field-01.png')
+
+						.field__player.player.field__player--1.player(data-profile="puzh")
+							//- include ../assets/img/player.svg
+							.player__hover
+								.player__name Григорий Пужный
+								.player__life 1904 - 1941
+								.player__role Легкоатлет, старший тренер общества “Спартак”
+
+						.field__player.field__player--2.player(data-profile="kadril")
+							//- include  ../assets/img/player.svg
+							.player__hover
+								.player__name Трофим Кадрилеев
+								.player__life 1910-1938
+								.player__role Лыжник, альпинист, преподаватель на кафедре Инфизкульта им. Сталина.
+
+						.field__player.field__player--3.player(data-profile="krivonos")
+							.player__hover
+								.player__name Серафим Кривоносов
+								.player__life 1903-1938
+								.player__role Футболист, заведующий спортивным магазином общества “Спартак”
+
+						.field__player.field__player--4.player(data-profile="geek")
+							.player__hover
+								.player__name Леонид Геек
+								.player__life 1903-????
+								.player__role Начальник учебно-спортивного отдела общества “Пищевик”
+
+						.field__player.field__player--5.player(data-profile="starost")
+							.player__hover
+								.player__name Старостины
+								.player__role Основатели команды “Спартак”
+
+						.field__player.field__player--6.player(data-profile="greben")
+							.player__hover
+								.player__name Иван Гребенщиков
+								.player__life 1900-1938
+								.player__role Руководитель кафедры лыж и легкой атлетики Московского института физкультуры
+
+						.field__player.field__player--7.player(data-profile="gvozd")
+							.player__hover
+								.player__name Елиазар Гвоздовер
+								.player__life 1914-1938
+								.player__role Тренер по легкой атлетике спортобщества “Рот Фронт”
+
+						.field__player.field__player--8.player(data-profile="arhan")
+							.player__hover
+								.player__name Евгений Архангельский
+								.player__life 1896-????
+								.player__role Бухгалтер планового отдела общества “Спартак”
+
+						.field__player.field__player--9.player(data-profile="strep")
+							.player__hover
+								.player__name Владимир Стрепихеев
+								.player__life 1904-1938
+								.player__role Футбольный судья
+
+						.field__player.field__player--10.player(data-profile="ryabo")
+							.player__hover
+								.player__name Виктор Рябоконь
+								.player__life 1895-1938
+								.player__role Начальник московского спортобщества “Локомотив”
+
+
+						.field__player.field__player--11.player(data-profile="prok")
+							.player__hover
+								.player__name Виктор Прокофьев
+								.player__life 1889-1938
+								.player__role Руководитель футбольно-хоккейной секции спортивного общества "Буревестник"
+
+						.field__player.field__player--12.player(data-profile="steb")
+							.player__hover
+								.player__name Василий Стеблев
+								.player__life 1906-1938
+								.player__role Начальник легкоатлетической секции и инструктор физкультуры Посольства Германии в СССР
+
 				section.section.element2.section-content(data-anchor="translation")
 
 					.content.cross-corners

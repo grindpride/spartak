@@ -1,6 +1,30 @@
 doctype html
-include translation.pug
+
 html
+	//-
+		<!--|    ,o888888o.    8 888888888o.    8 8888 b.             8 8 888888888o.
+			|	8888     `88.  8 8888    `88.   8 8888 888o.          8 8 8888    `^888.
+			|,8 8888       `8. 8 8888     `88   8 8888 Y88888o.       8 8 8888        `88.
+			|88 8888           8 8888     ,88   8 8888 .`Y888888o.    8 8 8888         `88
+			|88 8888           8 8888.   ,88'   8 8888 8o. `Y888888o. 8 8 8888          88
+			|88 8888           8 888888888P'    8 8888 8`Y8o. `Y88888o8 8 8888          88
+			|88 8888   8888888 8 8888`8b        8 8888 8   `Y8o. `Y8888 8 8888         ,88
+			|`8 8888       .8' 8 8888 `8b.      8 8888 8      `Y8o. `Y8 8 8888        ,88'
+			|   8888     ,88'  8 8888   `8b.    8 8888 8         `Y8o.` 8 8888    ,o88P'
+			|    `8888888P'    8 8888     `88.  8 8888 8            `Yo 8 888888888P'
+			|
+			|8 888888888o   8 888888888o.    8 8888 8 888888888o.      8 8888888888
+			|8 8888    `88. 8 8888    `88.   8 8888 8 8888    `^888.   8 8888
+			|8 8888     `88 8 8888     `88   8 8888 8 8888        `88. 8 8888
+			|8 8888     ,88 8 8888     ,88   8 8888 8 8888         `88 8 8888
+			|8 8888.   ,88' 8 8888.   ,88'   8 8888 8 8888          88 8 888888888888
+			|8 888888888P'  8 888888888P'    8 8888 8 8888          88 8 8888
+			|8 8888         8 8888`8b        8 8888 8 8888         ,88 8 8888
+			|8 8888         8 8888 `8b.      8 8888 8 8888        ,88' 8 8888
+			|8 8888         8 8888   `8b.    8 8888 8 8888    ,o88P'   8 8888
+			|8 8888         8 8888     `88.  8 8888 8 888888888P'      8 888888888888
+		//-->
+
 	head
 		title Дело спартака
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
@@ -548,6 +572,33 @@ html
 				aside.sidebar-right.panel.hidden
 					.timeline.hidden
 						img(src="../assets/img/timeline.png")
+						.timeline__card.timeline__card--yellow(timeline="15")
+						.timeline__card.timeline__card--yellow(timeline="16")
+						.timeline__card.timeline__card--yellow(timeline="17")
+						.timeline__card.timeline__card--yellow(timeline="19")
+						.timeline__card.timeline__card--yellow(timeline="20")
+						.timeline__card.timeline__card--yellow(timeline="25")
+
+						.timeline__card.timeline__card--red(timeline="28")
+
+						.timeline__card.timeline__card--yellow(timeline="29")
+
+						.timeline__card.timeline__card--red(timeline="30")
+
+						.timeline__card.timeline__card--yellow(timeline="31")
+						.timeline__card.timeline__card--yellow(timeline="32")
+
+						.timeline__card.timeline__card--red(timeline="33")
+
+						.timeline__card.timeline__card--yellow(timeline="34")
+
+						.timeline__card.timeline__card--red(timeline="36")
+						.timeline__card.timeline__card--red(timeline="37")
+						.timeline__card.timeline__card--red(timeline="38")
+
+
+
+
 					.aside-field.hidden
 						include ./field.pug
 					.flex-space

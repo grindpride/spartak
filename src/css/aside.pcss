@@ -267,6 +267,9 @@
     transition: all 0.3s ease;
     transition-delay: 0.6s;
     padding-right: 30px;
+    img{
+        width: 100%;
+    }
     @media screen and (max-width: 768px) {
         display: none;
     }
@@ -277,6 +280,76 @@
             transition-delay: 0s;
 
         }
+    }
+
+    &__card{
+        position: absolute;
+        width: 2%;
+        height: 20%;
+        transform: skewY(-25deg);
+        bottom: 50%;
+        border: 1px solid black;
+        cursor: pointer;
+        &:hover{
+            z-index: 1;
+            transform: skewY(-25deg) scale(1.1);
+        }
+        &--yellow{
+            background: yellow;
+        }
+        &--red{
+            background: red;
+        }
+        &[timeline="15"]{
+            left: 31%
+        }
+        &[timeline="16"]{
+            left: 31.5%;
+        }
+        &[timeline="17"]{
+            left: 31.7%;
+        }
+        &[timeline="19"]{
+            left: 32%;
+        }
+        &[timeline="20"]{
+            left: 32%;
+        }
+        &[timeline="25"]{
+            left: 32.6%;
+        }
+        &[timeline="28"]{
+            left: 41%;
+        }
+        &[timeline="29"]{
+            left: 41.4%;
+        }
+        &[timeline="30"]{
+            left: 42.6%;
+        }
+        &[timeline="31"]{
+            left: 44.2%;
+        }
+        &[timeline="32"]{
+            left: 45.9%;
+        }
+        &[timeline="33"]{
+            left: 50.9%;
+        }
+        &[timeline="34"]{
+            left: 51.3%;
+        }
+        &[timeline="36"]{
+            left: 52.4%;
+        }
+        &[timeline="37"]{
+            left: 52.4%;
+        }
+        &[timeline="38"]{
+            left: 64.6%;
+        }
+
+
     }
 }
 

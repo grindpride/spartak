@@ -228,3 +228,12 @@ $('.content').on("click", ".content__title:not(.active)", function () {
     open.addClass("hidden");
 
 });
+
+$('.timeline__card').on('click', function () {
+
+    let id = $(this).attr('timeline');
+    $('.header__translation').click();
+    let materialTop = $("#material-" + id).position().top;
+    let currentTop =  $('#psTranslation')[0].scrollTop
+    $('#psTranslation').animate({ scrollTop: currentTop+materialTop }, 600);
+})

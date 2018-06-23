@@ -1,4 +1,5 @@
 doctype html
+include translation.pug
 html
 	head
 		title Дело спартака
@@ -188,7 +189,7 @@ html
 					.player-profile__photo
 						img(src="../assets/img/geek/geek.png")
 					ul.player-profile__info
-						li.info-item.player-profile__life-span!= '1901 - ????'
+						li.info-item.player-profile__life-span!= '1901 - ?'
 						li.info-item.player-profile__post Начальник учебно-спортивного отдела общества “Пищевик”
 
 
@@ -308,7 +309,7 @@ html
 					.player-profile__photo
 						img(src="../assets/img/arhan/arhan.png")
 					ul.player-profile__info
-						li.info-item.player-profile__life-span!= '1896  - ????'
+						li.info-item.player-profile__life-span!= '1896  - ?'
 						li.info-item.player-profile__post Бухгалтер планового отдела общества “Спартак”
 
 				.player-profile__tabs.tabs
@@ -499,8 +500,8 @@ html
 			section.section-intro
 				div.tv
 					div.screen.mute#tv
-				a#playIntro Смотреть интро
-				a#skipIntro Пропустить интро
+				a#playIntro Смотреть
+				a#skipIntro Пропустить
 			//-.burger#burger
 				.burger__shift
 				.burger__shift
@@ -534,13 +535,19 @@ html
 							img(src='../assets/img/vk.png')
 
 					div.main-src
-
-						a.main-src__item(href="https://www.memo.ru/" target="_blank")
+						a.main-src__item.memo(href="https://www.memo.ru/" target="_blank")
 							img(src='../assets/img/memo_logo.png')
-						a.main-src__item(href="https://www.boell.de/en" target="_blank")
+						a.main-src__item.boell(href="https://www.boell.de/en" target="_blank")
 							img(src='../assets/img/heinrich_boell.png')
+						a.main-src__item.list(href="https://ru.openlist.wiki/" target="_blank")
+							img(src='../assets/img/open_list.png')
+						a.main-src__item.topos(href="https://topos.memo.ru/" target="_blank")
+							img(src='../assets/img/topos.png')
+
 
 				aside.sidebar-right.panel.hidden
+					.timeline.hidden
+						img(src="../assets/img/timeline.png")
 					.aside-field.hidden
 						include ./field.pug
 					.flex-space
@@ -569,7 +576,7 @@ html
 						.player-ava(data-profile="krivonos")
 						.player-ava(data-profile="steb")
 
-				//-aside.timeline
+
 			div#fullpage
 				section.section.section-intro-page
 					h2.intro-page__title Интро
@@ -705,6 +712,8 @@ html
 										p Список обвинений прежний: “спекуляции”, “рвачество”, завуалированный профессионализм (в “Спартаке”, в отличие от других спортобществ, не всегда удается оформить спортсмена на липовое рабочее место, иногда он занимается только спортом), “переманивание” игроков других команд.
 										p Главный обвиняемый - Николай Старостин. В этот раз одним обвинительным тоном статья не ограничивается, все завершается убийственным для сентября 37-го поворотом:
 										blockquote “Затхлую, гнилую атмосферу рвачества, подкупа, обворовывания общества в значительной мере насаждали враги народа, пробравшиеся во Всесоюзный комитет по делам физкультуры. Им удалось порядком навредить в физкультурном движении. Для ликвидации последствий вредительства в области физкультуры надо решительно очистить спортивные общества, и в частности “Спартак”, от буржуазных перерожденцев, грязных дельцов, залезающих в общественный карман, срывающих массовое развитие физкультуры и спорта”.
+										div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/600")
+											a(href='../assets/img/mat10/img1.png' data-caption="Газета “Комсомольская правда”, 3 сентября 1937")
 								.material#material-11
 									.material__date
 										span 11 сентября 1937

@@ -185,6 +185,7 @@ section {
 .intro-page{
   &__wrapper{
     display: flex;
+    align-items: center;
     margin-left: 230px;
     @media screen and (max-width: 768px) {
       flex-direction: column;
@@ -198,7 +199,9 @@ section {
     margin: 60px 0;
     font-weight: bolder;
     text-align: center;
-    //flex: 1 0 100%;
+    @media screen and (max-width: 768px) {
+      margin: 30px 0px;
+    }
   }
   &__text{
     color: #1D1D1B;
@@ -212,11 +215,14 @@ section {
   &__fotorama{
     width: 30vw;
     @media screen and (max-width: 768px) {
-      //width: calc(100% - 20px);
+      width: 90vw;
+      margin: 0 auto;
       margin-top: 60px;
-      width: 100vw;
     }
   }
+}
+*{
+  //border: 1px solid black;
 }
 .fotorama{
   padding: 5%;

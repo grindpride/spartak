@@ -1107,7 +1107,8 @@
   }
   &__content {
     position: relative;
-    display: none; padding: 20px;
+    display: none;
+    padding: 20px;
     &.active {
       display: block;
     }
@@ -1116,9 +1117,13 @@
       padding: 10px;
     }
     p {
-    //padding: 15px; line-height: 24px;
+
+      line-height: 24px;
       font-weight: 300;
       margin-bottom: 10px;
+      @media screen and (max-width: 768px) {
+        line-height: 16px;
+      }
     }
   }
 }

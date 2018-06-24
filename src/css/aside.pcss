@@ -11,7 +11,7 @@
     pointer-events: none;
     z-index: 20;
     @media screen and (max-width: 768px) {
-        width: 50vw;
+        width: 51vw;
         padding: 0;
         background-color: #F2F1F2;
         &.hidden {
@@ -59,8 +59,8 @@
 .social {
     //display: block;
     position: relative;
-    //margin-top: 60px;
-    margin-left: 15px;
+    margin-bottom: 30px;
+    //margin-left: 15px;
     width: 50px;
     background-color: #F2F1F2;
     display: flex;
@@ -113,10 +113,15 @@
     flex-wrap: wrap;
     //flex-direction: column;
     margin-bottom:  20px;
-    //margin-left: 15px;
+    width: 200px;
     &__item {
         margin-right: 15px;
         margin-top: 15px;
+        @media screen and (max-width: 768px) {
+            margin-right: 0px;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
         img {
             height: 45px;
         }
@@ -215,6 +220,7 @@
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     height: 100%;
     @media screen and (max-width: 768px) {
         width: 50vw;
@@ -230,7 +236,8 @@
         background-color: white;
         position: relative;
         height: 140px;
-        width: 165px;
+        max-width: 165px;
+        //width: 70%;
         margin: 0 15px;
         margin-bottom: 30px;
         pointer-events: auto;
@@ -281,24 +288,39 @@
 
         }
     }
-
+    &__label{
+        position: absolute;
+        text-transform: uppercase;
+        font-weight: 300;
+        top: 5%;
+        font-size: 1.5vh;
+        color: #1D1D1B;
+        &--first{
+            left: 13%;
+        }
+        &--second{
+            left: 50%;
+        }
+        &--add{
+            left: 81%;
+        }
+    }
     &__card{
         position: absolute;
-        width: 2%;
-        height: 20%;
-        transform: skewY(-25deg);
-        bottom: 50%;
-        border: 1px solid black;
+        width: 0.4%;
+        height: 25%;
+        bottom: 32%;
         cursor: pointer;
+        transition: transform 0.3s ease;
         &:hover{
             z-index: 1;
-            transform: skewY(-25deg) scale(1.1);
+            transform: scaleY(2);
         }
         &--yellow{
-            background: yellow;
+            background: #FFC12B;
         }
         &--red{
-            background: red;
+            background: #F93B26;
         }
         &[timeline="15"]{
             left: 31%
@@ -360,7 +382,7 @@
     width: 30vw;
     position: absolute;
     right: 30px;
-    top: 100px;
+    top: 9vw;
     transition-delay: 0.6s;
     @media screen and (max-width: 768px) {
         position: absolute;

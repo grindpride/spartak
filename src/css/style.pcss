@@ -82,7 +82,7 @@ img {
       cursor: pointer;
       position: absolute;
       bottom: 16px;
-      z-index: 2;
+      z-index: 22;
       padding: 25px;
       background: black;
       text-transform: uppercase;
@@ -103,6 +103,13 @@ img {
         display: none;
       }
       left: 16px;
+    }
+    .trobber{
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 }
 
@@ -176,15 +183,18 @@ section {
   //height: auto!important;
 }
 .section-intro-page{
-  height: auto!important;
-  .fp-tableCell{
+  @media screen and (max-width: 768px) {
+    height: auto !important;
+    .fp-tableCell{
     height: auto!important;
+    }
   }
+
 }
 .intro-page{
   &__wrapper{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-left: 230px;
     @media screen and (max-width: 768px) {
       flex-direction: column;
@@ -207,6 +217,19 @@ section {
     font-weight: 300;
     flex: 1 0 50%;
     margin: 0 60px;
+    position: relative;
+    &.view__wrapper{
+      background: white;
+    }
+    .view{
+      position: relative;
+      //margin: 0 30px;
+      padding: 15px;
+      max-height: 80vh;
+      @media screen and (max-width: 768px) {
+        max-height: none;
+      }
+    }
     @media screen and (max-width: 768px) {
       margin: 0 30px;
     }
@@ -243,4 +266,28 @@ section {
   width: 10px!important;
   height: 10px!important;
   border-radius: 50%!important;
+}
+
+.crew{
+  color: #1D1D1B;
+
+  &__title{
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+  }
+  &__list{
+    list-style: none;
+  }
+  &__member{
+    margin-bottom: 30px;
+  }
+  &__role{
+    font-weight: 300;
+    display: block;
+  }
+  &__name{
+    display: block;
+  }
+
 }

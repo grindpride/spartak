@@ -33,7 +33,7 @@ html
 		meta(property="og:url" content="http://spartak.memo.ru/")
 		meta(property="og:image" content="static/og_image.png")
 
-		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,shrink-to-fit=no")
 		meta(charset="utf-8")
 		//-favicon
 		link(rel="apple-touch-icon", sizes="120x120", href="static/apple-touch-icon.png")
@@ -532,7 +532,8 @@ html
 					div.screen.mute#tv
 				a#playIntro Смотреть
 				a#skipIntro Пропустить
-			.burger#burger
+				img.trobber(src='../assets/img/trobber4.gif')
+			.burger.cross-corners#burger
 				.burger__shift
 				.burger__shift
 				.burger__shift
@@ -542,16 +543,15 @@ html
 						h1.sidebar__title Дело спартака
 						p.sidebar__descr Люди гибнут за футбол
 
-					//-nav.sidebar__menu.menu
+					nav.sidebar__menu.menu
 
 
 						ul.menu__list
-							li.menu__item Интро
-							li.menu__item Начать игру
-							li.menu__item Завершить игру
-							li.menu__item Обзор матча
-							li.menu__item Игроки
-							li.menu__item О проекте
+							li.menu__item#menuIntro Интро
+							li.menu__item#menuBegin Начать игру
+							li.menu__item#menuEnd Завершить игру
+							li.menu__item#menuView Обзор матча
+							li.menu__item#menuAbout О проекте
 					.flex-space
 
 					div.social.cross-corners
@@ -608,7 +608,7 @@ html
 						.timeline__card.timeline__card--red(timeline="36")
 						.timeline__card.timeline__card--red(timeline="37")
 						.timeline__card.timeline__card--red(timeline="38")
-
+						.timeline__card.timeline__card--yellow(timeline="55")
 
 
 
@@ -674,9 +674,6 @@ html
 							.event-line.content__tab.hidden#psEventLine
 								include ./event-line.pug
 
-							//.translation.content__tab#psTranslation
-							//	.event-line.content__tab.hidden#psEventLine
-							//		include ./event-line.pug
 
 							.translation.content__tab#psTranslation
 								.material#material-1
@@ -1117,6 +1114,70 @@ html
 										p Через два года после окончания последних дел по арестам 1937-1938 гг., связанных со “Спартаком”, НКВД арестовывает трех братьев Старостиных - Николая, Андрея и Петра. Их обвиняют в финансовых злоупотреблениях, “пораженческих настроениях” (ожидании прихода немецких войск) и затем в “восхвалении буржуазного спорта”. Четвертый брат, Александр, будет арестован чуть позже, осенью.
 										div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/600")
 											a(href='../assets/img/mat55/img1.png' data-caption="Петр Старостин. Фото ареста")
+
+
+				section.section.section-intro-page
+					h2.intro-page__title Обзор матча
+					div.intro-page__wrapper
+						div.intro-page__text.view__wrapper.cross-corners
+							p.view#psView История «Спартака» в первые годы его существования это история спортивной команды, которая на практике познавала границы советского способа играть в футбол. Однако то, что было еще возможно в 1935 или 1936 оказалось смертельно опасным в 1937 году.
+								br
+								br
+								| Всего по делу о «заговоре» среди физкультурников и спортсменов общества «Спартак» было арестовано несколько десятков человек. Среди них — не только сами спортсмены, но и их близкие, а также спортивные функционеры и чиновники Института физкультуры и общества «Спартак». Большинство из них было расстреляно по приговорам Военной коллегии в 1938-м году.
+								br
+								br
+								| Осенью 1937-го политического влияния Александра Косарева и комсомола хватило для того, чтобы оградить от ареста Старостиных. Часть арестованных были спасены сменой власти в НКВД — осенью 1938-го года, когда дела вновь начали пересматриваться, а приговоры — отменяться.
+								br
+								br
+								| Однако само дело Спартака не исчезло вместе с концом Большого террора. В <a href="http://www.alexanderyakovlev.org/fond/issues-doc/58854">секретном спецсообщении</a> Берии на имя Сталина в 1942-м (документе, на котором до сих пор строят теории заговора некоторые исследователи дела Старостиных) вновь появляются те же имена: «немецкий шпион» тренер Стеблев, читавший «Легкую атлетику» в оригинале, бегун Гвоздовер, переводивший фрагменты из учебных пособий своим друзьям, судья Рябоконь, столкнувшийся в Париже со своим однокурсником. Все они — «враги» прежде всего потому, что выходят за границы советского понимания спорта, его логики осажденного лагеря, автономного существования во враждебном окружении.
+								br
+								br
+								| В обстоятельствах 1943 года эти обвинения означали лагерные сроки в 8 и 10 лет. Связи с западом превратились в «восхваление буржуазного спорта», профашистские настроения в условиях военного времени — в коллаборационизм, а «финансовые злоупотребления» — в расхищение социалистической собственности. Так дело Спартака превратилось в дело Старостиных.
+						div.intro-page__fotorama
+							div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/600")
+								a(href='../assets/img/obzor/img1.png' data-caption="Фрагмент следственного дела Николая Старостина. Материалы допроса.")
+							div.fotorama(data-allowfullscreen="true" data-fit="contain" data-width="100%" data-ratio="800/600")
+								a(href='../assets/img/obzor/img2.png' data-caption="Николай Старостин выступает на X-м съезде ВЛКСМ")
+				section.section.section-intro-page
+					h2.intro-page__title О проекте
+					div.intro-page__wrapper
+						p.intro-page__text «Люди гибнут за футбол» —  хроника событий, из которых состояла история спортивного общества «Спартак» в 1937-1939 гг. Наш короткий рассказ — это билет на футбольный матч, которого не было в действительности.
+							br
+							br
+							| На фантазийном поле вы можете встретить 11 человек, арестованных за принадлежность к «Спартаку» или за близкие отношения с семьей братьев Старостиных. Большинство из них были расстреляны в годы Большого террора. В трансляции матча последовательно рассказывается история их ареста и следствия по сфабрикованному делу, сопоставленная с таймлайном реальных или выдуманных следователями событий.
+							br
+							br
+							| Для подготовки сайта мы использовали материалы из архивно-следственных дел арестованных спартаковцев, газетные статьи, а также фото и видеохронику тех лет.
+							br
+							br
+							| Это субъективная история дела «Спартака»: у нас получилась только небольшая выдержка из хроники неосвещенных событий, но это нам кажется, идеальный способ окинуть первым взглядом историю футбольного сообщества конца 30-х годов.
+							br
+							br
+							| Проект создан при поддержке фонда имени Генриха Бёлля.
+						div.intro-page__fotorama.crew
+							h3.crew__title Команда
+							ul.crew__list
+								li.crew__member
+									span.crew__role Текст
+									span.crew__name Сергей Бондаренко
+
+								li.crew__member
+									span.crew__role Куратор
+									span.crew__name Светлана Шуранова
+
+								li.crew__member
+									span.crew__role Исследователь
+									span.crew__name Мария Шилова
+
+								li.crew__member
+									span.crew__role Дизайнеры
+									span.crew__name Любовь Покровская
+									span.crew__name Александра Беспалова
+
+								li.crew__member
+									span.crew__role Разработчик
+									span.crew__name Василий Корянов
+
 
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js")
 	script(src='../js/jquery-youtube.js')

@@ -2,7 +2,7 @@ console.log('intro init');
 let debug = false;
 let skiped = false;
 if(window.location.host === 'localhost:1234'){
-    debug = true;
+    // debug = true;
 }
 
 var tag = document.createElement('script');

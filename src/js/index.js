@@ -92,18 +92,59 @@ $('#fullpage').fullpage({
 // $.fn.fullpage.setMouseWheelScrolling(false);
 // $.fn.fullpage.setAllowScrolling(false);
 
+$('.menu__item').click(function () {
+
+    $('#burger').addClass('active');
+    panels.addClass('hidden');
+    switch ($(this).attr('id')){
+
+        case 'menuIntro':
+            console.log('menuIntro');
+            break;
+
+        case 'menuBegin':
+            $.fn.fullpage.moveTo(3);
+            scrollToMaterial(1, 2000);
+            break;
+
+        case 'menuEnd':
+            $.fn.fullpage.moveTo(3);
+            scrollToMaterial(55, 2000);
+            break;
+
+        case 'menuView':
+            $.fn.fullpage.moveTo(4);
+            break;
+
+        case 'menuAbout':
+            $.fn.fullpage.moveTo(5);
+            break;
+
+    }
+});
+
+
+$('#menuAbout').click(function () {
+    $.fn.fullpage.moveTo(5);
+});
+
+
 const ps1 = new PerfectScrollbar('#psEventLine', {
     wheelSpeed: 1,
-    wheelPropagation: false,
+    wheelPropagation: true,
     minScrollbarLength: 20
 });
 
 const ps2 = new PerfectScrollbar('#psTranslation', {
     wheelSpeed: 1,
-    wheelPropagation: false,
+    wheelPropagation: true,
     minScrollbarLength: 20
 });
-
+const ps3 = new PerfectScrollbar('#psView', {
+    wheelSpeed: 1,
+    wheelPropagation: true,
+    minScrollbarLength: 20
+});
 // $('.tabs__content.bio').each(
 //     function () {
 //         new PerfectScrollbar(this);
@@ -123,19 +164,22 @@ players.hover(
     function () {
         $('.player__hover').removeClass('active');
     })
-let materialArray = [11, 15, 16, 17, 19, 20, 25, 28, 29, 30, 31, 32, 33, 34, 36, 37, 38, 49, 52, 53]
+let materialArray = [2,3,11,14, 15, 16, 17, 19, 20, 25, 28, 29, 30, 31, 32, 33, 34, 36, 37, 38, 43, 52, 55]
 translationLine.on('ps-scroll-y', function (e) {
 
     materials.each((i) => {
         let materialTop = $(materials[i]).position().top;
-        if (materialTop > 0 && materialTop < 333) {
+        if (materialTop > 0 && materialTop < 500) {
             let id = $(materials[i]).attr('id').replace('material-', '');
-            if (!$("[data-materialid = " + id + "]").length) return;
+            console.log(id);
+
 
             if ($('#psEventLine').hasClass('hidden') && currentId != id) {
+                if (!$("[data-materialid = " + id + "]").length) return;
                 let eventTop = $("[data-materialid = " + id + "]").position().top;
                 // console.log('scrolli eveents rom translation', materialTop )
                 eventLine[0].scrollTop += eventTop - 60;
+                // console.log('')
                 if (materialArray.indexOf(Number.parseInt(id)) > -1) {
                     $('.field').attr('material-id', id);
                     $('.sidebar-right__field').attr('material-id', id);
@@ -232,8 +276,12 @@ $('.content').on("click", ".content__title:not(.active)", function () {
 $('.timeline__card').on('click', function () {
 
     let id = $(this).attr('timeline');
+    scrollToMaterial(id);
+})
+
+function scrollToMaterial(id, speed=600) {
     $('.header__translation').click();
     let materialTop = $("#material-" + id).position().top;
     let currentTop =  $('#psTranslation')[0].scrollTop
-    $('#psTranslation').animate({ scrollTop: currentTop+materialTop }, 600);
-})
+    $('#psTranslation').animate({ scrollTop: currentTop+materialTop }, speed);
+}

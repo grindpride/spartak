@@ -211,6 +211,9 @@ section {
     @media screen and (max-width: 768px) {
       margin: 30px 0px;
     }
+    @media screen and (max-height: 900px) {
+      margin: 30px 0px;
+    }
   }
   &__text{
     color: #1D1D1B;
@@ -233,6 +236,9 @@ section {
     @media screen and (max-width: 768px) {
       margin: 0 30px;
     }
+    @media screen and (max-height: 900px) {
+      margin: 0 30px;
+    }
   }
   &__fotorama{
     width: 30vw;
@@ -248,7 +254,8 @@ section {
 }
 .fotorama{
   padding: 5%;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M1 0 L0 1 L99 100 L100 99' fill='black' /><path d='M0 99 L99 0 L100 1 L1 100' fill='black' /></svg>");
+  //background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M1 1 L99 100' stroke="black" stroke-width="0.5" fill='black' /><path d='M0 99 L99 1 ' stroke="black" stroke-width="0.5" fill='black' /></svg>");
+  background: url("../assets/img/cross.svg") center no-repeat;
   background-repeat:no-repeat;
   background-position:center center;
   background-size: 100% 100%, auto;

@@ -43,7 +43,7 @@ function onPlayerReady(){
     if(!debug && !skiped){
         tv.loadVideoById(vid[currVid]);
 
-        // tv.playVideo();
+        tv.playVideo();
     }
 }
 function fakeClick(fn) {

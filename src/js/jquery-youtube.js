@@ -1,6 +1,6 @@
 console.log('intro init');
-let debug = false;
-let skiped = false;
+var debug = false;
+var skiped = false;
 if(window.location.host === 'localhost:1234'){
     // debug = true;
 }
@@ -9,100 +9,77 @@ var tag = document.createElement('script');
 tag.src = 'https://www.youtube.com/player_api';
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-var tv,
-    playerDefaults = {autoplay: 1,
-        autohide: 1,
-        modestbranding: 1,
-        rel: 0,
-        showinfo: 0,
-        controls: 0,
-        disablekb: 1,
-        enablejsapi: 1,
-        iv_load_policy: 3};
-var vid = [
-        {'videoId': 'AzR_QYX1eEM', 'suggestedQuality': 'hd720'}
-    ],
-    randomVid = Math.floor(Math.random() * vid.length),
-    currVid = randomVid;
+let vidos;
+
+let origin = window.location.href;
+console.log(origin);
+var playerDefaults = {autoplay: 1,
+                      autohide: 1,
+                      modestbranding: 1,
+                      rel: 0,
+                      showinfo: 0,
+                      controls: 0,
+                      disablekb: 1,
+                      enablejsapi: 1,
+                      iv_load_policy: 3};
+var vid = {videoId: 'AzR_QYX1eEM',
+            suggestedQuality: 'hd720',
+            host: 'https://www.youtube.com',
+            origin: origin};
 var stopPlayAt = 27;
 var stopPlayTimer;
 
-console.log(currVid);
+// console.log(currVid);
 
 window.onYouTubePlayerAPIReady = function(){
     console.log('YouTubePlayerAPIReady');
     if(!skiped) {
-        tv = new YT.Player('tv', {
+        vidos = new YT.Player('tv', {
             events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange},
             playerVars: playerDefaults
         });
+        window.VideoControl = vidos;
     }
 }
 
-function onPlayerReady(){
+function onPlayerReady(event){
+    console.log('PLAYER IS READY')
     if(!debug && !skiped){
-        tv.loadVideoById(vid[currVid]);
+        event.target.loadVideoById(vid);
+        event.target.playVideo();
 
-        tv.playVideo();
     }
 }
-function fakeClick(fn) {
-    var $a = $('<a href="#" id="fakeClick"></a>');
-    $a.bind("click", function(e) {
-        e.preventDefault();
-        fn();
-    });
 
-    $("body").append($a);
 
-    var evt,
-        el = $("#fakeClick").get(0);
-
-    if (document.createEvent) {
-        evt = document.createEvent("MouseEvents");
-        if (evt.initMouseEvent) {
-            evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-            el.dispatchEvent(evt);
-        }
-    }
-
-    $(el).remove();
-}
 
 function onPlayerStateChange(event) {
+    console.log("onPlayerStateChange")
+    // event.target.playVideo();
+    console.log(event.data)
     var time, rate, remainingTime;
     $('#tv').addClass('active');
     clearTimeout(stopPlayTimer);
+    if (event.data == -1){
+        console.log("play -1")
+        event.target.playVideo();
+    }
     if (event.data == YT.PlayerState.PLAYING) {
-        time = tv.getCurrentTime();
+        time = vidos.getCurrentTime();
         // Add .4 of a second to the time in case it's close to the current time
         // (The API kept returning ~9.7 when hitting play after stopping at 10s)
         if (time + .4 < stopPlayAt) {
-            rate = tv.getPlaybackRate();
+            rate = vidos.getPlaybackRate();
             remainingTime = (stopPlayAt - time) / rate;
             stopPlayTimer = setTimeout(pauseVideo, remainingTime * 1000);
         }
     }
 }
+
 function pauseVideo() {
-    tv.pauseVideo();
+    vidos.pauseVideo();
 }
 
-// function onPlayerStateChange(e) {
-//     if (e.data === 1){
-//         $('#tv').addClass('active');
-//         $('.hi em:nth-of-type(2)').html(currVid + 1);
-//     } else if (e.data === 2){
-//         $('#tv').removeClass('active');
-//         if(currVid === vid.length - 1){
-//             currVid = 0;
-//         } else {
-//             currVid++;
-//         }
-//         // tv.loadVideoById(vid[currVid]);
-//         // tv.seekTo(vid[currVid].startSeconds);
-//     }
-// }
 
 function vidRescale(){
 
@@ -110,26 +87,26 @@ function vidRescale(){
         h = $(window).height()+200;
 
 
-        tv.setSize(w, w/16*9);
-        $('.tv .screen').css({'left': '0px'});
+    vidos.setSize(w, w/16*9);
+        $('.screen').css({'left': '0px'});
 
 }
 
 $(window).on('load resize', function(){
-    if(tv) vidRescale();
+    if(vidos) vidRescale();
 });
 
 $('#playIntro').click(function () {
-    if(tv){
-        tv.stopVideo()
-        tv.playVideo()
+    if(vidos){
+        vidos.stopVideo()
+        vidos.playVideo()
     }
 });
 
 $('#skipIntro').click(function () {
     skiped = true;
     $('section.section-intro').slideUp(300);
-    if(tv){
+    if(vidos){
         pauseVideo();
     }
 });

@@ -153,7 +153,8 @@
     flex-wrap: wrap;
     //flex-direction: column;
     margin-bottom:  20px;
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     &__item {
         margin-right: 15px;
         margin-top: 15px;
@@ -164,6 +165,11 @@
         }
         img {
             height: 45px;
+
+
+            @media (max-width: 350px){
+                height: 30px;
+            }
         }
     }
     .topos{
@@ -361,7 +367,7 @@
         position: absolute;
         width: 0.4%;
         height: 25%;
-        bottom: 32%;
+        bottom: 46%;
         cursor: pointer;
         transition: transform 0.3s ease;
         &:hover{

@@ -99,7 +99,7 @@ $('.menu__item').click(function () {
     switch ($(this).attr('id')){
 
         case 'menuIntro':
-            console.log('menuIntro');
+            $.fn.fullpage.moveTo(1);
             break;
 
         case 'menuBegin':

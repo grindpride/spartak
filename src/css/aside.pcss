@@ -84,31 +84,14 @@
     }
     &__item {
         position: relative;
-        width: 25px;
+        width: 18px;
         height: 50px;
         border-bottom: 1px solid #9C9B9B;
         display: flex;
         align-items: center;
         justify-content: center;
         //padding: 26px 0;
-        &.fb {
-            img{
-                height: 17px;
-            }
-        }
-        &.ok {
 
-        }
-        &.vk {
-
-        }
-        &.tw {
-            img{
-                height: 17px;
-            }
-
-
-        }
         img{
             object-fit: contain;
         }
@@ -120,6 +103,7 @@
         flex-direction: row;
         width: auto;
         justify-content: space-around;
+        max-width: 195px;
         &__item {
             //height: auto;
             border-bottom: none;
@@ -131,8 +115,7 @@
                 width: 1px;
                 height: 50%;
                 background: #9C9B9B;
-            //top: 0;
-                right: -12px;
+                right: -15px;
 
             }
             &:last-child {
@@ -150,32 +133,44 @@
 .main-src {
 
     display: flex;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     //flex-direction: column;
-    margin-bottom:  20px;
+    margin-top:  10px;
+    margin-bottom:  10px;
     width: 100%;
     max-width: 200px;
+    @media screen and (max-width: 768px) {
+          margin-left: 15px;
+
+      }
+
     &__item {
         margin-right: 15px;
-        margin-top: 15px;
-        @media screen and (max-width: 768px) {
+        //margin-top: 15px;
+        /*@media screen and (max-width: 768px) {
             margin-right: 0px;
             margin-left: 15px;
             margin-top: 10px;
-        }
+        }*/
         img {
-            height: 45px;
+            height: 50px;
+          object-fit: contain;
 
 
-            @media (max-width: 350px){
+            /*@media (max-width: 350px){
+
                 height: 30px;
-            }
+            }*/
         }
     }
     .topos{
         img{
-            margin-top: 15px;
+            margin-top: 17px;
             height: 30px;
+            /*@media (max-width: 350px){
+              margin-top: 20px;
+              height: 10px;
+            }*/
         }
     }
 }

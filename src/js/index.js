@@ -1,4 +1,4 @@
-console.log('Main script');
+// console.log('Main script');
 
 $('#fullpage').fullpage({
     //Navigation
@@ -171,15 +171,15 @@ translationLine.on('ps-scroll-y', function (e) {
         let materialTop = $(materials[i]).position().top;
         if (materialTop > 0 && materialTop < 500) {
             let id = $(materials[i]).attr('id').replace('material-', '');
-            console.log(id);
+            // console.log(id);
 
 
             if ($('#psEventLine').hasClass('hidden') && currentId != id) {
                 if (!$("[data-materialid = " + id + "]").length) return;
                 let eventTop = $("[data-materialid = " + id + "]").position().top;
-                // console.log('scrolli eveents rom translation', materialTop )
+                // // console.log('scrolli eveents rom translation', materialTop )
                 eventLine[0].scrollTop += eventTop - 60;
-                // console.log('')
+                // // console.log('')
                 if (materialArray.indexOf(Number.parseInt(id)) > -1) {
                     $('.field').attr('material-id', id);
                     $('.sidebar-right__field').attr('material-id', id);
@@ -187,7 +187,7 @@ translationLine.on('ps-scroll-y', function (e) {
 
                 currentId = id;
             } else {
-                // console.log('no scroll events')
+                // // console.log('no scroll events')
             }
 
         }
@@ -198,7 +198,7 @@ let currentId;
 
 $('#psEventLine').on('ps-scroll-y', function (e) {
     let st = this.scrollTop;
-    // console.log(st);
+    // // console.log(st);
     events.each((i) => {
         let eventTop = $(events[i]).position().top;
         if (eventTop > 0 && eventTop < 333) {
@@ -212,7 +212,7 @@ $('#psEventLine').on('ps-scroll-y', function (e) {
                     $('.sidebar-right__field').attr('material-id', id);
                 }
             } else {
-                // console.log('no scrolli cose hidden')
+                // // console.log('no scrolli cose hidden')
             }
 
         }
@@ -230,20 +230,20 @@ $('.player, .player-profile__close').click(function () {
 });
 $('[data-profile]').click(function () {
     let profileId = $(this).data('profile');
-    console.log(profileId);
+    // console.log(profileId);
     if (profileId && $('#' + profileId).length) {
         $('#' + profileId).addClass('visible');
     }
 });
 $(document).keyup(function (e) {
     if (e.keyCode === 27) {
-        // console.log(e);
+        // // console.log(e);
         $('.player-profile.visible').removeClass('visible');
     }
 });
 
 $('.burger').click(function () {
-    console.log('toggle');
+    // console.log('toggle');
     $(this).toggleClass('active');
     panels.toggleClass('hidden');
 });

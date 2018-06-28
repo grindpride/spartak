@@ -1,4 +1,4 @@
-console.log('intro init');
+// console.log('intro init');
 var debug = false;
 var skiped = false;
 if(window.location.host === 'localhost:1234'){
@@ -12,7 +12,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 let vidos;
 
 let origin = window.location.href;
-console.log(origin);
+// console.log(origin);
 var playerDefaults = {autoplay: 1,
                       autohide: 1,
                       modestbranding: 1,
@@ -29,10 +29,10 @@ var vid = {videoId: 'AzR_QYX1eEM',
 var stopPlayAt = 27;
 var stopPlayTimer;
 
-// console.log(currVid);
+// // console.log(currVid);
 
 window.onYouTubePlayerAPIReady = function(){
-    console.log('YouTubePlayerAPIReady');
+    // console.log('YouTubePlayerAPIReady');
     if(!skiped) {
         vidos = new YT.Player('tv', {
             events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange},
@@ -43,7 +43,7 @@ window.onYouTubePlayerAPIReady = function(){
 }
 
 function onPlayerReady(event){
-    console.log('PLAYER IS READY')
+    // console.log('PLAYER IS READY')
     if(!debug && !skiped){
         event.target.loadVideoById(vid);
         event.target.playVideo();
@@ -54,14 +54,14 @@ function onPlayerReady(event){
 
 
 function onPlayerStateChange(event) {
-    console.log("onPlayerStateChange")
+    // console.log("onPlayerStateChange")
     // event.target.playVideo();
-    console.log(event.data)
+    // console.log(event.data)
     var time, rate, remainingTime;
     $('#tv').addClass('active');
     clearTimeout(stopPlayTimer);
     if (event.data == -1){
-        console.log("play -1")
+        // console.log("play -1")
         event.target.playVideo();
     }
     if (event.data == YT.PlayerState.PLAYING) {

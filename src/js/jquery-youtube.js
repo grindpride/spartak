@@ -5,10 +5,33 @@ if(window.location.host === 'localhost:1234'){
     // debug = true;
 }
 
+$(window).on('load resize', function(){
+    if(vidos) vidRescale();
+});
+
+$('#playIntro').click(function () {
+    if(vidos){
+        vidos.stopVideo()
+        vidos.playVideo()
+    }
+});
+
+$('#skipIntro').click(function () {
+    skiped = true;
+    $('section.section-intro').slideUp(300);
+    if(vidos){
+        pauseVideo();
+    }
+});
+
 var tag = document.createElement('script');
 tag.src = 'https://www.youtube.com/player_api';
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+if(!debug && !skiped){
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
+
+
 let vidos;
 
 let origin = window.location.href;
@@ -92,24 +115,7 @@ function vidRescale(){
 
 }
 
-$(window).on('load resize', function(){
-    if(vidos) vidRescale();
-});
 
-$('#playIntro').click(function () {
-    if(vidos){
-        vidos.stopVideo()
-        vidos.playVideo()
-    }
-});
-
-$('#skipIntro').click(function () {
-    skiped = true;
-    $('section.section-intro').slideUp(300);
-    if(vidos){
-        pauseVideo();
-    }
-});
 
 if(debug){
     $('#skipIntro').click();
